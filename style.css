@@ -1,189 +1,204 @@
+/* 🌐 إعدادات عامة */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Poppins', sans-serif;
-}
-
-:root {
-    --primary-color: #4CAF50;
-    --secondary-color: #2C3E50;
-    --background-color: #F9F9F9;
-    --text-color: #333;
-    --accent-color: #FF9800;
-    --gradient: linear-gradient(135deg, #4CAF50, #2C3E50);
-}
-
-body.dark {
-    --background-color: #1e1e1e;
-    --text-color: #f5f5f5;
-    --secondary-color: #333;
-    --gradient: linear-gradient(135deg, #FF9800, #FF5722);
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
 
 body {
-    background-color: var(--background-color);
-    color: var(--text-color);
+    background: #f9f9f9;
+    color: #333;
     line-height: 1.6;
-    transition: background 0.3s, color 0.3s;
+    transition: all 0.3s ease-in-out;
 }
 
-header {
+/* 🌙 الوضع الليلي */
+body.dark {
+    background: #121212;
+    color: #f1f1f1;
+}
+
+/* 🎨 الهيدر */
+header.ceko {
+    background: linear-gradient(135deg, #4e54c8, #8f94fb);
+    color: white;
+    padding: 15px 30px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 15px 30px;
-    background: var(--gradient);
-    color: #fff;
+    flex-wrap: wrap;
     position: sticky;
     top: 0;
     z-index: 1000;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-}
-
-header img {
-    height: 45px;
-    margin: 0 10px;
-}
-
-header span {
-    font-size: 1.3rem;
-    font-weight: bold;
+    box-shadow: 0px 4px 10px rgba(0,0,0,0.2);
 }
 
 header .dv {
     display: flex;
     align-items: center;
-    gap: 20px;
+    gap: 15px;
 }
 
-.bb {
-    background: var(--accent-color);
+#lo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 1.3rem;
+    font-weight: bold;
+}
+
+#im {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+}
+
+/* 🔘 الأزرار */
+.bo {
+    background: white;
+    color: #4e54c8;
     border: none;
     padding: 10px 18px;
-    border-radius: 30px;
-    color: #fff;
-    cursor: pointer;
+    border-radius: 25px;
     font-weight: bold;
+    cursor: pointer;
     transition: all 0.3s ease;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
 }
 
-.bb:hover {
-    background: var(--primary-color);
-    transform: scale(1.08);
+.bo:hover {
+    background: #4e54c8;
+    color: white;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.3);
 }
 
-main {
+body.dark .bo {
+    background: #333;
+    color: #f1f1f1;
+}
+
+body.dark .bo:hover {
+    background: #8f94fb;
+    color: #121212;
+}
+
+/* 🏠 الأقسام */
+main.ceko {
     padding: 40px 20px;
 }
 
-.ss {
-    margin-bottom: 60px;
-    text-align: center;
-    opacity: 0;
-    transform: translateY(40px);
-    animation: fadeInUp 1s forwards;
+.seo {
+    margin: 60px auto;
+    max-width: 1000px;
+    padding: 30px;
+    border-radius: 20px;
+    background: #fff;
+    box-shadow: 0px 6px 18px rgba(0,0,0,0.1);
+    transition: all 0.3s ease;
 }
 
-.ss:nth-child(1) { animation-delay: 0.2s; }
-.ss:nth-child(2) { animation-delay: 0.4s; }
-.ss:nth-child(3) { animation-delay: 0.6s; }
-.ss:nth-child(4) { animation-delay: 0.8s; }
-
-@keyframes fadeInUp {
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
+body.dark .seo {
+    background: #1e1e1e;
+    box-shadow: 0px 6px 18px rgba(0,0,0,0.5);
 }
 
-.tio {
-    font-size: 2.4rem;
+/* 📝 العناوين */
+.seo h1 {
+    font-size: 2rem;
     margin-bottom: 20px;
-    color: var(--primary-color);
-    position: relative;
+    color: #4e54c8;
+    text-transform: capitalize;
+    border-left: 5px solid #8f94fb;
+    padding-left: 10px;
 }
 
-.tio::after {
-    content: "";
-    width: 60px;
-    height: 4px;
-    background: var(--accent-color);
-    position: absolute;
-    bottom: -10px;
-    left: 50%;
-    transform: translateX(-50%);
-    border-radius: 2px;
+body.dark .seo h1 {
+    color: #8f94fb;
 }
 
-.po {
+/* ✨ النصوص */
+#pa1, .po {
     font-size: 1.1rem;
-    max-width: 800px;
-    margin: 20px auto;
+    margin-top: 10px;
     text-align: justify;
-    color: var(--text-color);
+}
+
+/* 🖼️ الخدمات */
+.ddv {
+    display: flex;
+    align-items: flex-start;
+    gap: 20px;
+    margin: 25px 0;
 }
 
 .imo {
-    width: 140px;
+    width: 80px;
+    height: 80px;
     border-radius: 15px;
-    margin-bottom: 15px;
-    transition: transform 0.4s, box-shadow 0.4s;
+    object-fit: cover;
+    box-shadow: 0px 4px 12px rgba(0,0,0,0.2);
+    transition: transform 0.3s;
 }
 
 .imo:hover {
-    transform: scale(1.08);
-    box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+    transform: scale(1.1);
 }
 
-.vd {
+/* 📞 تواصل */
+.di {
     display: flex;
-    flex-direction: column;
     align-items: center;
-    margin-bottom: 25px;
-    background: #fff;
-    padding: 25px;
-    border-radius: 12px;
-    box-shadow: 0 6px 12px rgba(0,0,0,0.15);
-    transition: transform 0.3s, background 0.3s;
+    gap: 15px;
+    margin: 15px 0;
 }
 
-body.dark .vd {
-    background: #2a2a2a;
+.io {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    object-fit: cover;
+    transition: transform 0.3s;
+    cursor: pointer;
 }
 
-.vd:hover {
-    transform: translateY(-8px);
+.io:hover {
+    transform: rotate(10deg) scale(1.1);
 }
 
-a {
-    text-decoration: none;
-    color: inherit;
+.le {
+    font-size: 1rem;
+    color: #555;
 }
 
-footer {
-    background: var(--gradient);
-    color: #fff;
+body.dark .le {
+    color: #ccc;
+}
+
+/* 👣 الفوتر */
+footer.ceko {
     text-align: center;
     padding: 20px;
-    font-size: 1rem;
-    box-shadow: 0 -4px 8px rgba(0,0,0,0.2);
+    background: #4e54c8;
+    color: white;
+    margin-top: 50px;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
 }
 
-@media (max-width: 768px) {
-    header {
+/* 📱 الاستجابة */
+@media(max-width: 768px) {
+    header.ceko {
         flex-direction: column;
-        gap: 10px;
+        gap: 15px;
     }
-    .dv {
+    .ddv {
         flex-direction: column;
+        align-items: center;
+        text-align: center;
     }
-    .tio {
-        font-size: 1.8rem;
-    }
-    .po {
-        font-size: 1rem;
-        padding: 0 10px;
+    .imo {
+        width: 60px;
+        height: 60px;
     }
 }
