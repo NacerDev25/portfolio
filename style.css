@@ -222,3 +222,19 @@ footer.ceko {
 @media (min-width: 1025px) {
     .ddvv { flex-direction: row; justify-content: center; }
 }
+/* 📩 قسم التواصل */
+#contact img, 
+#contact .imo {
+    width: 60px;   /* العرض */
+    height: 60px;  /* الطول */
+    object-fit: contain; /* يحافظ على تناسق الصورة */
+    border-radius: 50%;  /* صور دائرية */
+    margin: 10px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    transition: transform 0.3s ease;
+}
+
+#contact img:hover, 
+#contact .imo:hover {
+    transform: scale(1.1); /* تكبير أنيق عند المرور */
+}
