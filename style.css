@@ -1,240 +1,261 @@
-/* 🌐 الإعدادات العامة */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: "Cairo", sans-serif;
+/* ===========================
+   🌐 متغيرات الألوان والظلال
+   =========================== */
+:root{
+  --blue: #0066ff;
+  --cyan: #00c6ff;
+  --dark: #111;
+  --text: #333;
+  --bg: #f4f7fa;
+  --white: #fff;
+  --shadow-sm: 0 4px 12px rgba(0,0,0,0.15);
+  --shadow-md: 0 8px 22px rgba(0,0,0,0.18);
+  --shadow-lg: 0 12px 30px rgba(0,0,0,0.25);
+  --radius-lg: 18px;
+  --radius-md: 14px;
 }
 
-body {
-    background: #f4f7fa;
-    color: #333;
-    line-height: 1.6;
-    scroll-behavior: smooth;
-    transition: background 0.4s ease, color 0.4s ease;
+/* ===========================
+   🌐 إعدادات عامة
+   =========================== */
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:"Cairo",sans-serif;
 }
 
-/* 🔝 الهيدر */
-header.ceko {
-    background: linear-gradient(90deg, #0066ff, #00c6ff);
-    padding: 18px 25px;
-    box-shadow: 0 6px 20px rgba(0,0,0,0.15);
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    align-items: center;
-    border-bottom-left-radius: 14px;
-    border-bottom-right-radius: 14px;
+body{
+  background:var(--bg);
+  color:var(--text);
+  line-height:1.6;
+  scroll-behavior:smooth;
+  transition:background .4s ease,color .4s ease;
 }
 
-header.ceko .dv {
-    display: flex;
-    align-items: center;
-    gap: 18px;
+/* تحسين الوصول */
+button:focus-visible,
+a:focus-visible{
+  outline:3px solid var(--cyan);
+  outline-offset:3px;
+  border-radius:10px;
+}
+
+/* ===========================
+   🔝 الهيدر (الكبير فقط)
+   =========================== */
+header.ceko{
+  background:linear-gradient(90deg,var(--blue),var(--cyan));
+  padding:18px 25px;
+  box-shadow:var(--shadow-md);
+  position:sticky;
+  top:0;
+  z-index:1000;
+  display:flex;
+  flex-wrap:wrap;
+  justify-content:space-between;
+  align-items:center;
+  border-bottom-left-radius:14px;
+  border-bottom-right-radius:14px;
+}
+
+header.ceko .dv{
+  display:flex;
+  align-items:center;
+  gap:18px;
 }
 
 /* الشعار */
-#lo span {
-    font-size: 1.5rem;
-    font-weight: 700;
-    color: #fff;
-    letter-spacing: 1px;
+#lo span{
+  font-size:1.5rem;
+  font-weight:700;
+  color:var(--white);
+  letter-spacing:1px;
 }
 
-#im {
-    width: 50px;
-    height: 50px;
-    object-fit: cover;
-    border-radius: 50%;
-    border: 3px solid #fff;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.25);
-    transition: transform 0.3s ease;
+#im{
+  width:60px;height:60px;
+  object-fit:cover;
+  border-radius:50%;
+  border:3px solid var(--white);
+  box-shadow:var(--shadow-sm);
+  transition:transform .3s ease;
 }
-#im:hover { transform: scale(1.15) rotate(5deg); }
+#im:hover{ transform:scale(1.15) rotate(5deg); }
 
-/* الأزرار */
-.bo {
-    padding: 10px 20px;
-    background: linear-gradient(90deg, #fff, #f9f9f9);
-    color: #0066ff;
-    border: none;
-    border-radius: 12px;
-    cursor: pointer;
-    font-weight: 600;
-    transition: all 0.3s ease, background 0.5s ease;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+/* ===========================
+   🎛️ الأزرار العامة
+   =========================== */
+.bo{
+  padding:10px 20px;
+  background:linear-gradient(90deg,#ffffff,#f9f9f9);
+  color:var(--blue);
+  border:none;
+  border-radius:12px;
+  cursor:pointer;
+  font-weight:600;
+  transition:all .3s ease, background .5s ease;
+  box-shadow:var(--shadow-sm);
 }
-.bo:hover, .bo:focus {
-    background: linear-gradient(90deg, #0066ff, #00c6ff);
-    color: #fff;
-    transform: translateY(-3px);
-    box-shadow: 0 6px 18px rgba(0,0,0,0.25);
-}
-
-/* 🏷️ الأقسام */
-section.seo {
-    padding: 80px 20px;
-    text-align: center;
-    background: #fff;
-    margin: 40px auto;
-    border-radius: 20px;
-    max-width: 1200px;
-    box-shadow: 0 8px 25px rgba(0,0,0,0.1);
-    animation: fadeIn 1s ease both;
-}
-section.seo h1 {
-    font-size: 2.4rem;
-    margin-bottom: 40px;
-    color: #222;
-    font-weight: 700;
-    position: relative;
-}
-section.seo h1::after {
-    content: '';
-    display: block;
-    width: 100px;
-    height: 4px;
-    background: linear-gradient(90deg, #0066ff, #00c6ff);
-    margin: 14px auto 0;
-    border-radius: 2px;
+.bo:hover,.bo:focus{
+  background:linear-gradient(90deg,var(--blue),var(--cyan));
+  color:var(--white);
+  transform:translateY(-3px);
+  box-shadow:var(--shadow-md);
 }
 
-/* 📦 البطاقات */
-.ddvv {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 25px;
-}
-.ddv, .di {
-    background: #fff;
-    padding: 28px;
-    border-radius: 18px;
-    width: 320px;
-    box-shadow: 0 8px 22px rgba(0,0,0,0.1);
-    text-align: center;
-    transition: transform 0.4s ease, box-shadow 0.4s ease;
-    animation: slideUp 1s ease both;
-}
-.ddv:hover, .di:hover {
-    transform: translateY(-10px) scale(1.05);
-    box-shadow: 0 12px 30px rgba(0,0,0,0.2);
+/* ===========================
+   🏷️ الأقسام
+   =========================== */
+main.ceko{ padding:0 12px; }
+
+section.seo{
+  padding:80px 20px;
+  text-align:center;
+  background:var(--white);
+  margin:40px auto;
+  border-radius:20px;
+  max-width:1200px;
+  box-shadow:var(--shadow-sm);
+  animation:fadeIn 1s ease both;
 }
 
-.lab {
-    font-weight: 700;
-    margin-bottom: 14px;
-    font-size: 1.2rem;
-    color: #0066ff;
+section.seo h1{
+  font-size:2.35rem;
+  margin-bottom:40px;
+  color:#222;
+  font-weight:700;
+  position:relative;
+  letter-spacing:.4px;
+}
+section.seo h1::after{
+  content:'';
+  display:block;
+  width:110px;height:4px;
+  background:linear-gradient(90deg,var(--blue),var(--cyan));
+  margin:14px auto 0;
+  border-radius:2px;
 }
 
-.imo {
-    width: 50px;
-    height: 50px;
-    object-fit: cover;
-    margin-bottom: 16px;
-    border-radius: 16px;
-    box-shadow: 0 6px 18px rgba(0,0,0,0.12);
-    transition: transform 0.3s ease;
-}
-.imo:hover { transform: rotate(8deg) scale(1.1); }
-
-.po, .le {
-    font-size: 1rem;
-    color: #555;
+/* فقرة التعريف */
+#ddvi #pa1{
+  font-size:1.05rem;
+  color:#444;
+  max-width:900px;
+  margin:0 auto;
 }
 
-/* 🔚 الفوتر */
-footer.ceko {
-    background: #111;
-    color: #fff;
-    padding: 30px 20px;
-    text-align: center;
-    margin-top: 60px;
-    border-top: 4px solid #0066ff;
-    box-shadow: 0 -4px 20px rgba(0,0,0,0.2);
+/* ===========================
+   📦 شبكة البطاقات
+   =========================== */
+.ddvv{
+  display:flex;
+  flex-wrap:wrap;
+  justify-content:center;
+  gap:25px;
 }
 
-/* 🔹 القائمة الجانبية */
-#nm {
-    display: flex;
-    position: fixed;
-    top: 0;
-    left: 0;
-    margin-left: -100%;
-    height: 100vh;
-    width: 260px;
-    background: linear-gradient(180deg, #0066ff, #00c6ff);
-    z-index: 2000;
-    padding: 70px 25px;
-    box-shadow: 4px 0 25px rgba(0,0,0,0.3);
-    flex-direction: column;
-    gap: 20px;
-    transition: margin-left 0.4s ease;
+/* البطاقات */
+.ddv,.di{
+  background:var(--white);
+  padding:28px;
+  border-radius:var(--radius-lg);
+  width:320px;
+  box-shadow:var(--shadow-sm);
+  text-align:center;
+  transition:transform .35s ease, box-shadow .35s ease, background .35s ease;
+  animation:slideUp 1s ease both;
 }
-#nm .bo { width: 100%; }
-
-/* زر القائمة */
-#menubut {
-    display: none;
-    position: fixed;
-    top: 18px;
-    left: 18px;
-    z-index: 2100;
-    padding: 10px 18px;
-    background: #fff;
-    color: #0066ff;
-    border: none;
-    border-radius: 10px;
-    font-weight: 600;
-    cursor: pointer;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-    transition: all 0.5s ease;
-}
-#menubut:hover {
-    background: #004ecc;
-    color: #fff;
-    transform: translateY(-2px);
+.ddv:hover,.di:hover{
+  transform:translateY(-10px) scale(1.035);
+  box-shadow:var(--shadow-lg);
 }
 
-/* ✨ أنيميشن */
-@keyframes fadeIn {
-    from { opacity: 0; transform: translateY(20px); }
-    to { opacity: 1; transform: translateY(0); }
-}
-@keyframes slideUp {
-    from { opacity: 0; transform: translateY(40px); }
-    to { opacity: 1; transform: translateY(0); }
+/* العناوين */
+.lab{
+  font-weight:700;
+  margin-bottom:14px;
+  font-size:1.2rem;
+  color:var(--blue);
 }
 
-/* 📱 التجاوب */
-@media (max-width: 768px) {
-    header.ceko { display: none; }
-    #menubut { display: block; }
-    .ddvv { flex-direction: column; align-items: center; }
+/* الصور داخل البطاقات */
+.imo,.io{
+  width:70px;height:70px;
+  object-fit:cover;
+  border-radius:50%;
+  margin-bottom:16px;
+  box-shadow:var(--shadow-sm);
+  transition:transform .3s ease;
 }
-@media (min-width: 769px) and (max-width: 1024px) {
-    .ddvv { flex-wrap: wrap; justify-content: space-evenly; }
-}
-@media (min-width: 1025px) {
-    .ddvv { flex-direction: row; justify-content: center; }
-}
-/* 📩 قسم التواصل */
-#contact img, 
-#contact .imo {
-    width: 60px;   /* العرض */
-    height: 60px;  /* الطول */
-    object-fit: contain; /* يحافظ على تناسق الصورة */
-    border-radius: 50%;  /* صور دائرية */
-    margin: 10px;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-    transition: transform 0.3s ease;
+.imo:hover,.io:hover{ transform:rotate(6deg) scale(1.08); }
+
+/* النصوص */
+.po,.le{
+  font-size:1rem;
+  color:#555;
 }
 
-#contact img:hover, 
-#contact .imo:hover {
-    transform: scale(1.1); /* تكبير أنيق عند المرور */
+/* ===========================
+   🔚 الفوتر
+   =========================== */
+footer.ceko{
+  background:var(--dark);
+  color:var(--white);
+  padding:30px 20px;
+  text-align:center;
+  margin-top:60px;
+  border-top:4px solid var(--blue);
+  box-shadow:0 -4px 20px rgba(0,0,0,0.2);
 }
+footer.ceko #tit5{
+  font-size:1.25rem;
+  letter-spacing:.5px;
+}
+
+/* ===========================
+   🔹 القائمة الجانبية
+   =========================== */
+#nm{
+  display:flex;
+  position:fixed;
+  top:0;left:0;
+  margin-left:-100%;           /* 👈 مخفية افتراضياً */
+  height:100vh;width:260px;    /* 👈 بارتفاع الشاشة */
+  background:linear-gradient(180deg,var(--blue),var(--cyan));
+  z-index:2000;
+  padding:70px 25px;
+  box-shadow:4px 0 25px rgba(0,0,0,0.3);
+  flex-direction:column;
+  gap:20px;
+  transition:margin-left .4s ease;
+}
+
+/* زر القائمة (موبايل فقط) */
+#menubut{
+  display:none;
+  position:fixed;
+  top:18px;left:18px;
+  z-index:2100;
+  padding:10px 18px;
+  background:var(--white);
+  color:var(--blue);
+  border:none;
+  border-radius:10px;
+  font-weight:600;
+  cursor:pointer;
+  box-shadow:var(--shadow-sm);
+  transition:all .3s ease;
+}
+#menubut:hover{
+  background:#004ecc;
+  color:var(--white);
+  transform:translateY(-2px);
+}
+
+/* ===========================
+   ✨ أنيميشن
+   =========================== */
+@keyframes fadeIn{
+  from{opacity:0; transform:translateY(20px);}
+  to{opacity:1; transform:
