@@ -1,10 +1,12 @@
 document.addEventListener("DOMContentLoaded", function() {
+    // ننسخو d1 و d2 ونحطوهم داخل القائمة الجانبية
     const a = document.getElementById("d1").cloneNode(true);
     const b = document.getElementById("d2").cloneNode(true);
     const c = document.getElementById("nm");
     c.appendChild(a);
     c.appendChild(b);
 
+    // زر فتح/غلق القائمة
     const d = document.getElementById("menubut");
     const f = document.getElementById("nm");
 
@@ -15,4 +17,21 @@ document.addEventListener("DOMContentLoaded", function() {
             f.style.marginLeft = "-100%";
         }
     });
+
+    // زر تبديل الثيم
+    const t = document.getElementById("bo1");
+    let h = "light"; // نخلي الوضع الافتراضي light
+
+    t.addEventListener("click", function() {
+        if (h === "light") {
+            h = "dark";
+            document.body.style.backgroundColor = "#111";
+            document.body.style.color = "#fff";
+        } else {
+            h = "light";
+            document.body.style.backgroundColor = "#fff";
+            document.body.style.color = "#000";
+        }
+    });
 });
+
