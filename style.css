@@ -1,204 +1,318 @@
-/* 🌐 الإعدادات العامة */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: "Cairo", sans-serif;
+/* ------------------------------
+   Reset بسيط ومظهر أساسي
+   ------------------------------ */
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{height:100%}
+body{
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  line-height:1.45;
+  color:#1f2937; /* غامق للقراءة */
+  background: #f7f7fb;
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+  padding:0 1rem;
 }
 
-body {
-    background: #f5f7fa;
-    color: #333;
-    line-height: 1.6;
-    scroll-behavior: smooth;
-    transition: background 0.4s ease, color 0.4s ease;
+/* ---------- عام للـcontainer والصفحات ---------- */
+.ceko{
+  max-width:1150px;
+  margin:0 auto;
+  display:block;
+  width:100%;
 }
 
-/* 🔝 الهيدر */
-header.ceko {
-    background: linear-gradient(90deg, #0066ff, #00c6ff);
-    padding: 18px 25px;
-    box-shadow: 0 6px 20px rgba(0,0,0,0.15);
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    align-items: center;
-    border-bottom-left-radius: 14px;
-    border-bottom-right-radius: 14px;
+/* ---------- Header الرئيسي ---------- */
+header.ceko{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:1rem;
+  padding:1.25rem 0;
+  position:relative;
 }
 
-/* الهيدر الداخلي */
-header.ceko .dv {
-    display: flex;
-    align-items: center;
-    gap: 18px;
+/* الحاويات داخل الهيدر */
+.dv{
+  display:flex;
+  align-items:center;
+  gap:1rem;
 }
 
-/* الشعار */
-#lo span {
-    font-size: 1.5rem;
-    font-weight: 700;
-    color: #fff;
-    letter-spacing: 1px;
+/* الجزء الأيسر d1: الشعار والنص */
+#d1 h1{
+  font-size:1.05rem;
+  margin-bottom:0.25rem;
+  text-transform:capitalize;
+  color:#0f172a;
 }
 
-#im {
-    width: 50px;
-    height: 50px;
-    object-fit: cover;
-    border-radius: 50%;
-    border: 3px solid #fff;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.25);
-    transition: transform 0.3s ease;
+/* شعار نصي بسيط داخل #lo */
+#lo{
+  display:flex;
+  align-items:center;
+  gap:0.5rem;
 }
-#im:hover { transform: scale(1.15) rotate(5deg); }
-
-/* nav links تظهر كأزرار */
-#d2 nav ul {
-    display: flex;
-    gap: 15px;
-    list-style: none;
+#sp1,#sp2{
+  font-weight:600;
+  font-size:.95rem;
+  user-select:none;
 }
-
-#d2 nav ul li a {
-    display: inline-block;
-    padding: 10px 18px;
-    background: #fff;
-    color: #0066ff;
-    border-radius: 12px;
-    font-weight: 600;
-    text-decoration: none;
-    transition: all 0.3s ease;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+#im{
+  width:48px;
+  height:48px;
+  object-fit:cover;
+  border-radius:8px;
+  display:inline-block;
+  vertical-align:middle;
+  box-shadow:0 2px 8px rgba(16,24,40,0.06);
 }
 
-#d2 nav ul li a:hover {
-    background: linear-gradient(90deg, #0066ff, #00c6ff);
-    color: #fff;
-    transform: translateY(-3px);
-    box-shadow: 0 6px 18px rgba(0,0,0,0.25);
+/* nav (القائمة العلوية) */
+header nav ul{
+  display:flex;
+  gap:0.75rem;
+  list-style:none;
+  align-items:center;
+}
+header nav a{
+  text-decoration:none;
+  padding:0.45rem 0.85rem;
+  border-radius:10px;
+  display:inline-block;
+  font-weight:600;
+  color:#0f172a;
+  transition:background .18s ease, transform .12s ease;
+}
+header nav a:hover,
+header nav a:focus{
+  background:rgba(15,23,42,0.06);
+  outline:none;
+  transform:translateY(-2px);
 }
 
-/* زر القائمة */
-#menubut {
-    display: none; /* نبدأ مخفي في Desktop */
-    padding: 12px 20px;
-    font-size: 1rem;
-    font-weight: 600;
-    color: #fff;
-    background: linear-gradient(90deg, #0066ff, #00c6ff);
-    border: none;
-    border-radius: 10px;
-    cursor: pointer;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
-    transition: all 0.3s ease;
+/* زر قائمة التنقل (للشاشات الصغيرة) */
+#menubut{
+  display:none; /* سيظهر في موبايل عن طريق media query */
+  background:#0f172a;
+  color:white;
+  border:none;
+  padding:.5rem .75rem;
+  border-radius:10px;
+  cursor:pointer;
+  font-weight:700;
+  box-shadow:0 6px 18px rgba(15,23,42,0.12);
 }
-#menubut:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 6px 15px rgba(0,0,0,0.25);
+#menubut:focus{
+  outline:3px solid rgba(99,102,241,0.15);
 }
 
-/* 🏷️ الأقسام */
-section.seo {
-    padding: 80px 20px;
-    text-align: center;
-    background: #fff;
-    margin: 40px auto;
-    border-radius: 20px;
-    max-width: 1200px;
-    box-shadow: 0 8px 25px rgba(0,0,0,0.1);
-    animation: fadeIn 1s ease both;
+/* ---------- القائمة الجانبية المنبثقة (#nm) ---------- */
+#nm{
+  position:fixed;
+  top:0;
+  left:0;
+  height:100vh;
+  width:320px;
+  max-width:85%;
+  background:#0b1220;
+  color:white;
+  transform:translateX(-110%);
+  transition:transform .32s cubic-bezier(.2,.9,.25,1);
+  z-index:1200;
+  padding:2.25rem 1.2rem;
+  box-shadow: 6px 0 30px rgba(2,6,23,0.45);
+  display:flex;
+  flex-direction:column;
+  gap:1rem;
+  aria-hidden:true;
 }
 
-section.seo h2 {
-    font-size: 2rem;
-    margin-bottom: 30px;
-    color: #222;
-    font-weight: 700;
-    position: relative;
+/* حالة مفعلة للـmenu (يتم إضافتها بواسطة js: class "open") */
+#nm.open{
+  transform:translateX(0);
 }
 
-section.seo h2::after {
-    content: '';
-    display: block;
-    width: 80px;
-    height: 4px;
-    background: linear-gradient(90deg, #0066ff, #00c6ff);
-    margin: 12px auto 0;
-    border-radius: 2px;
+/* روابط داخل الـmenu كأزرار */
+#nm a{
+  display:block;
+  text-decoration:none;
+  padding:.9rem 1rem;
+  border-radius:8px;
+  font-weight:700;
+  color:inherit;
+  background:transparent;
+  transition:background .15s ease, transform .12s ease;
+}
+#nm a:hover,#nm a:focus{
+  background:rgba(255,255,255,0.06);
+  transform:translateX(6px);
+  outline:none;
 }
 
-/* 📦 البطاقات */
-.ddvv {
-    display: flex;
-    gap: 20px;
-    flex-wrap: wrap;
-    justify-content: center;
+/* overlay خفيف عندما تفتح القائمة */
+.menu-overlay{
+  position:fixed;
+  inset:0;
+  background:rgba(2,6,23,0.48);
+  opacity:0;
+  pointer-events:none;
+  transition:opacity .25s ease;
+  z-index:1100;
+}
+.menu-overlay.show{
+  opacity:1;
+  pointer-events:auto;
 }
 
-/* البطاقات الفردية */
-.ddv {
-    background: #f5f7fa;
-    padding: 20px;
-    border-radius: 16px;
-    max-width: 300px;
-    flex: 1 1 280px;
-    box-shadow: 0 6px 18px rgba(0,0,0,0.1);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-.ddv:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 10px 25px rgba(0,0,0,0.15);
-}
-.ddv .lab {
-    font-weight: 700;
-    margin-bottom: 10px;
-    display: block;
-}
-.ddv .imo {
-    width: 100%;
-    height: 180px;
-    object-fit: cover;
-    border-radius: 12px;
-    margin-bottom: 12px;
-}
-.ddv .po {
-    font-size: 0.95rem;
-    color: #333;
-    line-height: 1.5;
+/* ---------- Main content ---------- */
+main.ceko{
+  margin:1.25rem auto 2.5rem;
+  display:block;
 }
 
-/* 📱 Responsive Design */
-@media (max-width: 768px) {
-    /* زر القائمة يظهر */
-    #menubut {
-        display: flex;
-    }
-
-    /* nav links تختفي */
-    #d2 nav ul {
-        display: none;
-        flex-direction: column;
-        gap: 12px;
-        margin-top: 15px;
-    }
-
-    /* nav links تظهر عند فتح القائمة */
-    #d2 nav ul.active {
-        display: flex;
-    }
+/* كل section */
+.section-title{
+  font-size:1.1rem;
+  margin-bottom:.6rem;
 }
 
-/* في الشاشات الكبيرة، nav دائما يظهر وزر القائمة يختفي */
-@media (min-width: 769px) {
-    #menubut {
-        display: none;
-    }
-    #d2 nav ul {
-        display: flex !important;
-        flex-direction: row;
-    }
+/* استخدمت .seo للقسم العام */
+.seo{
+  margin-bottom:2rem;
+  padding:1rem;
+  background:transparent;
 }
+
+/* نص المقدمة في Home */
+#ddvi{
+  background:#ffffff;
+  padding:1rem;
+  border-radius:12px;
+  box-shadow:0 6px 20px rgba(2,6,23,0.04);
+}
+#pa1{
+  font-size:.98rem;
+  color:#0f172a;
+}
+
+/* ---------- قسم الخدمات / المشاريع (البطاقات) ---------- */
+.ddvv{
+  display:flex;
+  gap:1rem;
+  margin-top:0.85rem;
+  flex-wrap:wrap;
+}
+
+/* كل بطاقة */
+.ddv{
+  flex:1 1 calc(33.333% - 1rem);
+  min-width:230px;
+  background:#fff;
+  border-radius:14px;
+  padding:1rem;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  text-align:center;
+  gap:.6rem;
+  box-shadow:0 10px 30px rgba(2,6,23,0.04);
+  transition:transform .16s ease, box-shadow .16s ease;
+}
+.ddv:focus-within, .ddv:hover{
+  transform:translateY(-6px);
+  box-shadow:0 18px 40px rgba(2,6,23,0.06);
+}
+
+/* عنوان صغير على البطاقة */
+.lab{
+  display:block;
+  font-weight:800;
+  text-transform:uppercase;
+  font-size:.82rem;
+  letter-spacing:.06em;
+  background:linear-gradient(90deg,#6366f1,#06b6d4);
+  -webkit-background-clip:text;
+  background-clip:text;
+  color:transparent;
+}
+
+/* الصور داخل البطاقات */
+.imo{
+  width:88px;
+  height:88px;
+  border-radius:10px;
+  object-fit:cover;
+  box-shadow:0 6px 20px rgba(2,6,23,0.06);
+}
+
+/* الفقرة داخل البطاقة */
+.po{
+  font-size:.92rem;
+  color:#334155;
+}
+
+/* ---------- قسم التواصل (contact) ---------- */
+.di{
+  background:#fff;
+  border-radius:12px;
+  padding:.7rem;
+  display:flex;
+  gap:0.8rem;
+  align-items:center;
+  box-shadow:0 8px 24px rgba(2,6,23,0.03);
+  min-width:220px;
+}
+.le{
+  font-weight:700;
+  color:#0f172a;
+  user-select:text;
+}
+
+/* أيقونات التواصل (تصغير) */
+.di .imo{ width:44px; height:44px; }
+
+/* Footer */
+footer.ceko{
+  padding:1.25rem 0;
+  text-align:center;
+  color:#475569;
+  font-size:.95rem;
+}
+
+/* ---------- استجابة الشاشات ---------- */
+@media (max-width:900px){
+  header.ceko{
+    align-items:center;
+  }
+  header nav{ display:none; }
+  #menubut{ display:inline-flex; align-items:center; gap:.4rem; }
+  .ddv{ flex:1 1 calc(50% - 1rem); }
+  #d1 h1{ font-size:1rem; }
+}
+
+@media (max-width:640px){
+  body{ padding:0 .7rem; }
+  .ddv{ flex:1 1 100%; }
+  #d1 h1{ font-size:.95rem; }
+  #sp1,#sp2{ font-size:.9rem; }
+  .dv{ gap:.6rem; }
+  #menubut{ padding:.45rem .6rem; border-radius:8px; }
+}
+
+/* ---------- وصولية وتقليل الحركات ---------- */
+@media (prefers-reduced-motion:reduce){
+  *{ transition:none !important; animation:none !important; }
+}
+
+/* ---------- تحسين الوصول للوحة المفاتيح ---------- */
+a:focus, button:focus, input:focus{
+  outline:3px solid rgba(99,102,241,0.18);
+  outline-offset:2px;
+  border-radius:8px;
+}
+
+/* ---------- حالات صغيرة لتنسيق الروابط النصية داخل contact ---------- */
+.di a{ display:inline-flex; align-items:center; gap:.6rem; text-decoration:none; color:inherit; }
+
+/* ---------- ملحوظة: يمكن تعديل الألوان بسهولة هنا ---------- */
+/* :root{ --accent:#6366f1; --accent-2:#06b6d4; --bg:#f7f7fb } */
