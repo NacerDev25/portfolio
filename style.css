@@ -7,7 +7,7 @@
 }
 
 body {
-    background: #f4f7fa;
+    background: #f5f7fa;
     color: #333;
     line-height: 1.6;
     scroll-behavior: smooth;
@@ -30,6 +30,7 @@ header.ceko {
     border-bottom-right-radius: 14px;
 }
 
+/* الهيدر الداخلي */
 header.ceko .dv {
     display: flex;
     align-items: center;
@@ -55,23 +56,49 @@ header.ceko .dv {
 }
 #im:hover { transform: scale(1.15) rotate(5deg); }
 
-/* الأزرار */
-.bo {
-    padding: 10px 20px;
-    background: linear-gradient(90deg, #fff, #f9f9f9);
+/* nav links تظهر كأزرار */
+#d2 nav ul {
+    display: flex;
+    gap: 15px;
+    list-style: none;
+}
+
+#d2 nav ul li a {
+    display: inline-block;
+    padding: 10px 18px;
+    background: #fff;
     color: #0066ff;
-    border: none;
     border-radius: 12px;
-    cursor: pointer;
     font-weight: 600;
-    transition: all 0.3s ease, background 0.5s ease;
+    text-decoration: none;
+    transition: all 0.3s ease;
     box-shadow: 0 4px 12px rgba(0,0,0,0.15);
 }
-.bo:hover, .bo:focus {
+
+#d2 nav ul li a:hover {
     background: linear-gradient(90deg, #0066ff, #00c6ff);
     color: #fff;
     transform: translateY(-3px);
     box-shadow: 0 6px 18px rgba(0,0,0,0.25);
+}
+
+/* زر القائمة */
+#menubut {
+    display: none; /* نبدأ مخفي في Desktop */
+    padding: 12px 20px;
+    font-size: 1rem;
+    font-weight: 600;
+    color: #fff;
+    background: linear-gradient(90deg, #0066ff, #00c6ff);
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+    transition: all 0.3s ease;
+}
+#menubut:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 15px rgba(0,0,0,0.25);
 }
 
 /* 🏷️ الأقسام */
@@ -85,148 +112,93 @@ section.seo {
     box-shadow: 0 8px 25px rgba(0,0,0,0.1);
     animation: fadeIn 1s ease both;
 }
-section.seo h1 {
-    font-size: 2.4rem;
-    margin-bottom: 40px;
+
+section.seo h2 {
+    font-size: 2rem;
+    margin-bottom: 30px;
     color: #222;
     font-weight: 700;
     position: relative;
 }
-section.seo h1::after {
+
+section.seo h2::after {
     content: '';
     display: block;
-    width: 100px;
+    width: 80px;
     height: 4px;
     background: linear-gradient(90deg, #0066ff, #00c6ff);
-    margin: 14px auto 0;
+    margin: 12px auto 0;
     border-radius: 2px;
 }
 
 /* 📦 البطاقات */
 .ddvv {
     display: flex;
+    gap: 20px;
     flex-wrap: wrap;
     justify-content: center;
-    gap: 25px;
-}
-.ddv, .di {
-    background: #fff;
-    padding: 28px;
-    border-radius: 18px;
-    width: 320px;
-    box-shadow: 0 8px 22px rgba(0,0,0,0.1);
-    text-align: center;
-    transition: transform 0.4s ease, box-shadow 0.4s ease;
-    animation: slideUp 1s ease both;
-}
-.ddv:hover, .di:hover {
-    transform: translateY(-10px) scale(1.05);
-    box-shadow: 0 12px 30px rgba(0,0,0,0.2);
 }
 
-.lab {
-    font-weight: 700;
-    margin-bottom: 14px;
-    font-size: 1.2rem;
-    color: #0066ff;
-}
-
-.imo {
-    width: 50px;
-    height: 50px;
-    object-fit: cover;
-    margin-bottom: 16px;
+/* البطاقات الفردية */
+.ddv {
+    background: #f5f7fa;
+    padding: 20px;
     border-radius: 16px;
-    box-shadow: 0 6px 18px rgba(0,0,0,0.12);
-    transition: transform 0.3s ease;
+    max-width: 300px;
+    flex: 1 1 280px;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
-.imo:hover { transform: rotate(8deg) scale(1.1); }
-
-.po, .le {
-    font-size: 1rem;
-    color: #555;
+.ddv:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.15);
 }
-
-/* 🔚 الفوتر */
-footer.ceko {
-    background: #111;
-    color: #fff;
-    padding: 30px 20px;
-    text-align: center;
-    margin-top: 60px;
-    border-top: 4px solid #0066ff;
-    box-shadow: 0 -4px 20px rgba(0,0,0,0.2);
+.ddv .lab {
+    font-weight: 700;
+    margin-bottom: 10px;
+    display: block;
 }
-
-/* 🔹 القائمة الجانبية */
-#nm {
-    display: flex;
-    position: fixed;
-    top: 0;
-    left: 0;
-    margin-left: -100%;
-    height: 100vh;
-    width: 260px;
-    background: linear-gradient(180deg, #0066ff, #00c6ff);
-    z-index: 2000;
-    padding: 70px 25px;
-    box-shadow: 4px 0 25px rgba(0,0,0,0.3);
-    flex-direction: column;
-    gap: 20px;
-    transition: margin-left 0.4s ease;
+.ddv .imo {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 12px;
+    margin-bottom: 12px;
 }
-#nm .bo { width: 100%; }
-
-/* زر القائمة */
-#menubut {
-    display: none;
-    position: fixed;
-    top: 18px;
-    left: 18px;
-    z-index: 2100;
-    padding: 10px 18px;
-    background: #fff;
-    color: #0066ff;
-    border: none;
-    border-radius: 10px;
-    font-weight: 600;
-    cursor: pointer;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-    transition: all 0.5s ease;
-}
-#menubut:hover {
-    background: #004ecc;
-    color: #fff;
-    transform: translateY(-2px);
+.ddv .po {
+    font-size: 0.95rem;
+    color: #333;
+    line-height: 1.5;
 }
 
-/* ✨ أنيميشن */
-@keyframes fadeIn {
-    from { opacity: 0; transform: translateY(20px); }
-    to { opacity: 1; transform: translateY(0); }
-}
-@keyframes slideUp {
-    from { opacity: 0; transform: translateY(40px); }
-    to { opacity: 1; transform: translateY(0); }
-}
-
-/* 📱 التجاوب */
+/* 📱 Responsive Design */
 @media (max-width: 768px) {
-    header.ceko { display: none; }
-    #menubut { display: block; }
-    .ddvv { flex-direction: column; align-items: center; }
+    /* زر القائمة يظهر */
+    #menubut {
+        display: block;
+    }
+
+    /* nav links تختفي */
+    #d2 nav ul {
+        display: none;
+        flex-direction: column;
+        gap: 12px;
+        margin-top: 15px;
+    }
+
+    /* nav links تظهر عند فتح القائمة */
+    #d2 nav ul.active {
+        display: flex;
+    }
 }
-@media (min-width: 769px) and (max-width: 1024px) {
-    .ddvv { flex-wrap: wrap; justify-content: space-evenly; }
+
+/* في الشاشات الكبيرة، nav دائما يظهر وزر القائمة يختفي */
+@media (min-width: 769px) {
+    #menubut {
+        display: none;
+    }
+    #d2 nav ul {
+        display: flex !important;
+        flex-direction: row;
+    }
 }
-@media (min-width: 1025px) {
-    .ddvv { flex-direction: row; justify-content: center; }
-}
-
-
-
-
-
-
-
-
