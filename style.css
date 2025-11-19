@@ -121,7 +121,7 @@ header nav a:focus {
     gap: 1rem;
     z-index: 1200;
     box-shadow: 6px 0 30px rgba(2,6,23,0.45);
-    /* ستتحكم JS في ظهورها */
+    transition: margin-left 0.3s ease; /* سلاسة الحركة */
 }
 
 /* روابط داخل القائمة */
@@ -140,6 +140,23 @@ header nav a:focus {
     background: rgba(255,255,255,0.06);
     transform: translateX(6px);
     outline: none;
+}
+
+/* مخفي افتراضياً في الشاشات الصغيرة */
+@media (max-width: 900px) {
+    #nm {
+        margin-left: -100%;
+    }
+
+    #nm.active {
+        margin-left: 0;
+    }
+
+    #menubut {
+        display: inline-flex;
+        align-items: center;
+        gap: .4rem;
+    }
 }
 
 /* ---------- Main content ---------- */
@@ -235,7 +252,6 @@ footer.ceko {
 /* ---------- استجابة الشاشات ---------- */
 @media (max-width: 900px) {
     header nav { display: none; }
-    #menubut { display: inline-flex; align-items: center; gap: .4rem; }
     .ddv { flex: 1 1 calc(50% - 1rem); }
     #d1 h1 { font-size: 1rem; }
 }
@@ -250,5 +266,6 @@ footer.ceko {
 }
 
 /* ---------- وصولية وتقليل الحركات ---------- */
-@media (prefers-reduced-motion:reduce){
-    *{ transition:none !imp*
+@media (prefers-reduced-motion: reduce){
+    *{ transition:none !important; }
+}
