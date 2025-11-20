@@ -105,7 +105,7 @@ header nav a:focus {
     z-index: 1300;
 }
 #menubut svg {
-    display: block;
+    display: flex;
 }
 #menubut:hover,
 #menubut:focus {
