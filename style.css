@@ -89,10 +89,10 @@ header nav a:focus {
     outline: none;
 }
 
-/* ---------- زر الهامبرغر المحسن ---------- */
+/* ---------- زر الهامبرغر (#menubut) ---------- */
 #menubut {
-    display: none; /* يظهر فقط في الشاشات الصغيرة */
-    background: #f7f7fb; /* لون واضح ومختلف عن خلفية القائمة السوداء */
+    display: none; /* مخفي في الشاشات الكبيرة */
+    background: #f7f7fb;
     color: #0f172a;
     border: 2px solid #0f172a;
     padding: .55rem .75rem;
@@ -102,7 +102,7 @@ header nav a:focus {
     box-shadow: 0 6px 18px rgba(15,23,42,0.12);
     transition: background .2s ease, transform .15s ease, color .2s ease, box-shadow .2s ease;
     position: relative;
-    z-index: 1300; /* أعلى من القائمة الجانبية لتكون مرئية */
+    z-index: 1300;
 }
 #menubut svg {
     display: block;
@@ -139,4 +139,137 @@ header nav a:focus {
     text-decoration: none;
     padding: .9rem 1rem;
     border-radius: 8px;
-    font-wei
+    font-weight: 700;
+    color: inherit;
+    background: transparent;
+    transition: background .15s ease, transform .12s ease;
+}
+#nm a:hover,
+#nm a:focus {
+    background: rgba(255,255,255,0.06);
+    transform: translateX(6px);
+    outline: none;
+}
+
+/* مخفي افتراضياً في الشاشات الصغيرة */
+@media (max-width: 900px) {
+    #menubut {
+        display: inline-flex;
+        align-items: center;
+        gap: .4rem;
+    }
+    #nm {
+        margin-left: -100%;
+    }
+    #nm.active {
+        margin-left: 0;
+    }
+    header nav {
+        display: none;
+    }
+}
+
+/* ---------- Main content ---------- */
+main.ceko {
+    margin: 1.25rem auto 2.5rem;
+}
+.seo {
+    margin-bottom: 2rem;
+    padding: 1rem;
+    background: transparent;
+}
+
+/* ---------- البطاقات ---------- */
+.ddvv {
+    display: flex;
+    gap: 1rem;
+    margin-top: 0.85rem;
+    flex-wrap: wrap;
+}
+.ddv {
+    flex: 1 1 calc(33.333% - 1rem);
+    min-width: 230px;
+    background: #fff;
+    border-radius: 14px;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: .6rem;
+    box-shadow: 0 10px 30px rgba(2,6,23,0.04);
+    transition: transform .16s ease, box-shadow .16s ease;
+}
+.ddv:hover,
+.ddv:focus-within {
+    transform: translateY(-6px);
+    box-shadow: 0 18px 40px rgba(2,6,23,0.06);
+}
+.lab {
+    display: block;
+    font-weight: 800;
+    text-transform: uppercase;
+    font-size: .82rem;
+    letter-spacing: .06em;
+    background: linear-gradient(90deg,#6366f1,#06b6d4);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+.imo {
+    width: 88px;
+    height: 88px;
+    border-radius: 10px;
+    object-fit: cover;
+    box-shadow: 0 6px 20px rgba(2,6,23,0.06);
+}
+.po {
+    font-size: .92rem;
+    color: #334155;
+}
+
+/* ---------- قسم التواصل ---------- */
+.di {
+    background: #fff;
+    border-radius: 12px;
+    padding: .7rem;
+    display: flex;
+    gap: .8rem;
+    align-items: center;
+    box-shadow: 0 8px 24px rgba(2,6,23,0.03);
+    min-width: 220px;
+}
+.le {
+    font-weight: 700;
+    color: #0f172a;
+    user-select: text;
+}
+.di .imo { width: 44px; height: 44px; }
+.di a { display: inline-flex; align-items: center; gap: .6rem; text-decoration: none; color: inherit; }
+
+/* ---------- Footer ---------- */
+footer.ceko {
+    padding: 1.25rem 0;
+    text-align: center;
+    color: #475569;
+    font-size: .95rem;
+}
+
+/* ---------- استجابة الشاشات ---------- */
+@media (max-width: 900px) {
+    .ddv { flex: 1 1 calc(50% - 1rem); }
+    #d1 h1 { font-size: 1rem; }
+}
+@media (max-width: 640px) {
+    body { padding: 0 .7rem; }
+    .ddv { flex: 1 1 100%; }
+    #d1 h1 { font-size: .95rem; }
+    #sp1, #sp2 { font-size: .9rem; }
+    .dv { gap: .6rem; }
+    #menubut { padding: .45rem .6rem; border-radius: 8px; }
+}
+
+/* ---------- وصولية وتقليل الحركات ---------- */
+@media (prefers-reduced-motion: reduce){
+    *{ transition:none !important; }
+}
