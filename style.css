@@ -141,7 +141,7 @@ header nav a:hover {
     gap: 1rem;
     box-shadow: 6px 0 35px rgba(0,0,0,.4);
     transition: 0.3s ease;
-    z-index: 3000;
+    z-index: 300;
     margin-left: -100%;
 }
 
