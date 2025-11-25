@@ -1,282 +1,298 @@
-/* ------------------------------
-   RESET + BASE STYLING
------------------------------- */
+/* ==== Google Fonts Import ==== */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+/* ==== CSS Variables (Theme Colors) ==== */
+:root {
+    --bg-color: #1f242d;
+    --second-bg-color: #323946;
+    --text-color: #fff;
+    --main-color: #0ef;
+    --shadow-color: rgba(0, 0, 0, 0.2);
+}
+
+/* ==== General Reset & Body Styling ==== */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    text-decoration: none;
+    border: none;
+    outline: none;
+    scroll-behavior: smooth;
+    font-family: 'Poppins', sans-serif;
 }
 
-html, body {
-    height: 100%;
+html {
+    font-size: 62.5%;
+    overflow-x: hidden;
 }
 
 body {
-    font-family: "Inter", system-ui, sans-serif;
-    background: #f5f7fa;
-    color: #0f172a;
-    -webkit-font-smoothing: antialiased;
-    padding: 0 1rem;
+    background: var(--bg-color);
+    color: var(--text-color);
     line-height: 1.6;
 }
 
-/* ------------------------------
-   CONTAINER
------------------------------- */
+/* ==== Header ==== */
 .ceko {
-    max-width: 1150px;
-    margin: 0 auto;
-    width: 100%;
-}
-
-/* ------------------------------
-   HEADER
------------------------------- */
-header.ceko {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 1.2rem 0;
-    position: sticky;
-    top: 0;
-    z-index: 2000;
-    background: #f5f7fa;
-    box-shadow: 0 2px 14px rgba(0,0,0,0.05);
+    padding: 2rem 9%;
+    background: var(--bg-color);
+    width: 100%;
+    z-index: 100;
 }
 
-/* يسار الهيدر */
-.dv {
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-}
-
-#d1 h1 {
-    font-size: 1.1rem;
-    font-weight: 700;
-    color: #0f172a;
-    text-transform: capitalize;
-}
-
-/* اللوغو */
-#lo {
-    display: flex;
-    align-items: center;
-    gap: .45rem;
-}
-
-#sp1, #sp2 {
-    font-weight: 700;
-    font-size: 1.05rem;
-    user-select: none;
-    color: #6366f1;
-}
-
-#im {
-    width: 50px;
-    height: 50px;
-    object-fit: cover;
-    border-radius: 10px;
-    box-shadow: 0 4px 12px rgba(99,102,241,.3);
-}
-
-/* ------------------------------
-   TOP NAV (DESKTOP)
------------------------------- */
-header nav ul {
-    display: flex;
-    list-style: none;
-    gap: 1rem;
-}
-
-header nav a {
-    text-decoration: none;
-    padding: .55rem 1rem;
-    border-radius: 10px;
-    font-weight: 600;
-    color: #0f172a;
-    transition: 0.15s ease;
-}
-
-header nav a:hover {
-    background: rgba(99,102,241,0.14);
-    transform: translateY(-2px);
-}
-
-/* ------------------------------
-   MENU BUTTON (MOBILE)
------------------------------- */
-#menubut {
-    display: none;
-    padding: .6rem .8rem;
-    border-radius: 12px;
-    border: 2px solid #6366f1;
-    background: #fff;
-    cursor: pointer;
-    color: #6366f1;
-    box-shadow: 0 4px 14px rgba(0,0,0,.1);
-    transition: 0.2s;
-}
-
-#menubut:hover {
-    background: #eef2ff;
-    transform: scale(1.04);
-}
-
-/* ------------------------------
-   SIDEBAR MENU (MOBILE)
------------------------------- */
-#nm {
+header.ceko {
     position: fixed;
     top: 0;
     left: 0;
-    width: 320px;
-    max-width: 85%;
-    height: 100vh;
-    background: #0f172a;
-    color: white;
-    padding: 2.5rem 1.2rem;
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-    box-shadow: 6px 0 35px rgba(0,0,0,.4);
-    transition: 0.3s ease;
-    z-index: 3000;
-    margin-left: -100%;
+    border-bottom: 1px solid var(--second-bg-color);
 }
 
-#nm.active {
-    margin-left: 0;
+.dv h1 {
+    font-size: 2.4rem;
+    font-weight: 600;
+    display: none; /* Hidden as the logo is more prominent */
+}
+
+#lo {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    font-size: 2.5rem;
+    font-weight: 600;
+    color: var(--text-color);
+}
+
+#lo .sp {
+    color: var(--main-color);
+}
+
+#im {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    border: 2px solid var(--main-color);
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 4rem;
+}
+
+nav a {
+    font-size: 1.7rem;
+    color: var(--text-color);
+    transition: color 0.3s ease;
+}
+
+nav a:hover,
+nav a.active {
+    color: var(--main-color);
+}
+
+/* ==== Mobile Menu Button ==== */
+#menubut {
+    display: none; /* Hidden on desktop */
+    font-size: 3.6rem;
+    color: var(--text-color);
+    background: transparent;
+    cursor: pointer;
+}
+
+/* ==== Mobile Navigation Menu (#nm) ==== */
+#nm {
+    position: fixed;
+    top: 0;
+    left: -100%; /* Initially hidden */
+    width: 250px;
+    height: 100%;
+    background: var(--second-bg-color);
+    padding: 6rem 2rem 2rem;
+    transition: left 0.4s ease-in-out;
+    z-index: 101;
+}
+
+#nm ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
 }
 
 #nm a {
-    text-decoration: none;
-    padding: .95rem 1rem;
-    border-radius: 8px;
-    color: #fff;
-    font-weight: 600;
-    transition: 0.15s;
+    font-size: 2rem;
+    color: var(--text-color);
+    display: block;
+    transition: color 0.3s ease;
 }
 
 #nm a:hover {
-    background: rgba(255,255,255,.12);
-    transform: translateX(5px);
+    color: var(--main-color);
 }
 
-/* ------------------------------
-   RESPONSIVE
------------------------------- */
-@media (max-width: 900px) {
-    header nav {
-        display: none;
-    }
-    #menubut {
-        display: inline-flex;
-        align-items: center;
-        gap: .3rem;
-    }
+
+/* ==== Main Content & Sections ==== */
+main {
+    padding-top: 8rem; /* To offset fixed header */
 }
 
-/* ------------------------------
-   MAIN CONTENT
------------------------------- */
-main.ceko {
-    margin-top: 1.5rem;
-}
-
-/* ------------------------------
-   SECTIONS
------------------------------- */
 .seo {
-    background: #fff;
-    padding: 2rem;
-    border-radius: 18px;
-    margin-bottom: 2rem;
-    box-shadow: 0 4px 18px rgba(0,0,0,.06);
+    min-height: 80vh;
+    padding: 8rem 9% 4rem;
+}
+
+.seo:nth-of-type(even) {
+    background: var(--second-bg-color);
 }
 
 .seo h2 {
-    font-size: 1.8rem;
-    margin-bottom: 1.4rem;
-    color: #6366f1;
-    border-left: 6px solid #14b8a6;
-    padding-left: .75rem;
+    font-size: 4.5rem;
+    text-align: center;
+    margin-bottom: 5rem;
+    text-transform: capitalize;
 }
 
-/* ------------------------------
-   SERVICE / PROJECT CARDS
------------------------------- */
+.seo h2::first-letter {
+    color: var(--main-color);
+}
+
+/* Home Section */
+#pa1 {
+    font-size: 1.6rem;
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+    line-height: 1.8;
+}
+
+/* Services Section */
 .ddvv {
     display: flex;
+    justify-content: center;
+    align-items: stretch; /* Make cards same height */
     flex-wrap: wrap;
-    gap: 1.3rem;
+    gap: 4rem;
 }
 
-/* بطاقة */
-.ddv,
-.di {
-    background: #ffffff;
-    border-radius: 16px;
-    padding: 1.2rem;
-    box-shadow: 0 4px 16px rgba(0,0,0,.08);
-    flex: 1 1 calc(33% - 1rem);
-    min-width: 260px;
-    transition: 0.25s ease;
-}
-
-.ddv:hover,
-.di:hover {
-    transform: translateY(-6px);
-    box-shadow: 0 10px 28px rgba(0,0,0,.12);
-}
-
-/* صورة البطاقة */
-.imo {
-    width: 100%;
-    height: 170px;
-    object-fit: cover;
-    border-radius: 12px;
-    margin: .6rem 0;
-}
-
-/* النص */
-.po {
-    margin-top: .5rem;
-    font-size: .95rem;
-    color: #334155;
-}
-
-/* ------------------------------
-   CONTACT SECTION
------------------------------- */
-.di img {
-    width: 45px;
-    height: 45px;
-    border-radius: 10px;
-    object-fit: cover;
-}
-
-.le {
-    font-size: 1.05rem;
-    font-weight: 600;
-    margin-top: .7rem;
-    display: block;
-}
-
-/* ------------------------------
-   FOOTER
------------------------------- */
-footer {
-    margin-top: 3rem;
-    padding: 1.5rem;
-    background: #0f172a;
-    color: #fff;
+.ddv {
+    flex: 1 1 30rem; /* Flex properties for responsive grid */
+    background: var(--bg-color);
+    padding: 3rem 2rem 4rem;
+    border-radius: 2rem;
     text-align: center;
-    border-radius: 14px;
+    border: 0.2rem solid var(--bg-color);
+    transition: all 0.4s ease;
+    box-shadow: 0 0 1rem var(--shadow-color);
 }
 
-#tit5 {
-    font-size: 1rem;
+.ddv:hover {
+    border-color: var(--main-color);
+    transform: translateY(-1rem);
+}
+
+.ddv .imo {
+    width: 8rem;
+    height: 8rem;
+    margin-bottom: 1rem;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.ddv .lab {
+    display: block;
+    font-size: 2.2rem;
     font-weight: 600;
-    letter-spacing: .8px;
+    margin-bottom: 1rem;
+    text-transform: uppercase;
+}
+
+.ddv .po {
+    font-size: 1.4rem;
+}
+
+/* Contact Section */
+.di {
+    flex: 1 1 25rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+    transition: transform 0.3s ease;
+}
+
+.di:hover {
+    transform: scale(1.05);
+}
+
+.di .imo {
+    width: 7rem;
+    height: 7rem;
+    border-radius: 50%;
+    border: 2px solid var(--main-color);
+    transition: box-shadow 0.3s ease;
+}
+
+.di a:hover .imo,
+.di:hover .imo {
+    box-shadow: 0 0 2rem var(--main-color);
+}
+
+.di .le {
+    font-size: 1.6rem;
+}
+
+/* ==== Footer ==== */
+footer.ceko {
+    border-top: 1px solid var(--second-bg-color);
+    background: var(--bg-color);
+}
+
+#pf {
+    font-size: 1.4rem;
+    text-align: center;
+    width: 100%;
+}
+
+
+/* ==== Responsive Design (Media Queries) ==== */
+@media (max-width: 991px) {
+    html {
+        font-size: 55%;
+    }
+    .ceko {
+        padding: 2rem 3%;
+    }
+    .seo {
+        padding: 7rem 3%;
+    }
+}
+
+@media (max-width: 768px) {
+    #menubut {
+        display: block; /* Show hamburger menu */
+    }
+    nav {
+        display: none; /* Hide desktop nav */
+    }
+    .ddvv {
+        flex-direction: column;
+        align-items: center;
+    }
+    .ddv, .di {
+        flex-basis: 100%; /* Take full width */
+        max-width: 40rem;
+    }
+}
+
+@media (max-width: 450px) {
+    html {
+        font-size: 50%;
+    }
+    #lo {
+        font-size: 2rem;
+    }
 }
