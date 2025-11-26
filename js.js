@@ -11,10 +11,10 @@ document.addEventListener("DOMContentLoaded", function() {
     const f = document.getElementById("nm");
 
     d.addEventListener("click", function() {
-        if (f.style.marginLeft === "-100%") {
-            f.style.marginLeft = "0";
-        } else {
+        if (f.style.marginLeft === "0px" || f.style.marginLeft === "0") {
             f.style.marginLeft = "-100%";
+        } else {
+            f.style.marginLeft = "0";
         }
     });
 
