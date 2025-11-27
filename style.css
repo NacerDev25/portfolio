@@ -106,6 +106,10 @@ nav a.active {
     cursor: pointer;
 }
 
+#nm.active {
+    margin-left: 0;
+}
+
 /* ==== Mobile Navigation Menu (#nm) ==== */
 #nm {
     position: fixed;
