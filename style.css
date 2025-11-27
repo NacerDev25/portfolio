@@ -100,10 +100,39 @@ nav a.active {
 /* ==== Mobile Menu Button ==== */
 #menubut {
     display: none; /* Hidden on desktop */
-    font-size: 3.6rem;
-    color: var(--text-color);
-    background: transparent;
+    position: fixed;
+    top: 2rem;
+    right: 3%;
+    width: 40px;
+    height: 30px; /* Total height for the icon area */
+    background-color: var(--text-color); /* This will be the middle bar */
     cursor: pointer;
+    z-index: 102;
+    border: none;
+    border-radius: 3px; /* Apply to the middle bar */
+    transition: all 0.3s ease-in-out;
+    padding: 0; /* Ensure no padding */
+    font-size: 0; /* Hide any potential text inside */
+}
+
+#menubut::before,
+#menubut::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 3px;
+    background-color: var(--text-color);
+    border-radius: 3px;
+    left: 0;
+    transition: all 0.3s ease-in-out;
+}
+
+#menubut::before {
+    top: -10px; /* Position above the middle bar */
+}
+
+#menubut::after {
+    bottom: -10px; /* Position below the middle bar */
 }
 
 #nm.active {
@@ -217,6 +246,14 @@ main {
     text-transform: uppercase;
 }
 
+.lab {
+    display: block;
+    font-size: 2.2rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    text-transform: uppercase;
+}
+
 .ddv .po {
     font-size: 1.4rem;
 }
@@ -280,10 +317,14 @@ footer.ceko {
 
 @media (max-width: 768px) {
     #menubut {
-        display: flex; /* Show hamburger menu */
+        display: block; /* Show hamburger menu */
+        position: fixed; /* Ensure it stays visible */
     }
     header.ceko {
         display: none; /* Hide header on mobile */
+    }
+    main {
+        padding-top: 6rem;
     }
     .ddvv {
         flex-direction: column;
