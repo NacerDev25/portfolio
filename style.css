@@ -280,7 +280,7 @@ footer.ceko {
 
 @media (max-width: 768px) {
     #menubut {
-        display: block; /* Show hamburger menu */
+        display: flex; /* Show hamburger menu */
     }
     header.ceko {
         display: none; /* Hide header on mobile */
