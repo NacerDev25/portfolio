@@ -8,12 +8,6 @@
 <script src="js.js" defer></script>
 </head>
 <body>
-    <button id="menubut" aria-label="Toggle navigation menu">
-navigation menu
-    </button>
-    <div id="nm">
-
-    </div>
 <header class="ceko">
 <div class="dv" id="d1">
 <h1>
@@ -32,22 +26,22 @@ dev 25
 <nav id="n1">
     <ul>
         <li class="ll">
-            <a href="#tit1">
+            <a href="#tit1" class="nav-link">
 home
             </a>
         </li>
         <li class="ll">
-            <a href="#tit2">
+            <a href="#tit2" class="nav-link">
 services                
             </a>
         </li>
         <li class="ll">
-            <a href="#tit3">
+            <a href="#tit3" class="nav-link">
 projects
             </a>
         </li>
         <li class="ll">
-            <a href="#tit4">
+            <a href="#tit4" class="nav-link">
 contact
             </a>
         </li>
@@ -123,19 +117,29 @@ js
 </div>
 <div class="di">
 <a href="https://www.facebook.com/share/1CXkuAaywJ/" target="_blank" rel="noopener noreferrer">
-    <img src="facebook.jpg" alt="facebook" class="imo">
+    <svg width="26" height="26" viewBox="0 0 24 24" fill="none" 
+     stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+  <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
+</svg>
+
 </a>
-<label class="le">
+<span>
 facebook
-</label>
+</span>
 </div>
 <div class="di">
 <a href="https://www.instagram.com/bouteldja.nacer?igsh=MXN1cHE0OTE5Z2Q1ZA==" target="_blank" rel="noopener noreferrer">
-    <img src="INSTAGRAM.jpg" alt="instagram" class="imo">
+    <svg width="26" height="26" viewBox="0 0 24 24" fill="none" 
+     stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+  <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+  <path d="M16 11.37a4 4 0 1 1-4.94-4.94 4 4 0 0 1 4.94 4.94z"></path>
+  <line x1="17.5" y1="6.5" x2="17.5" y2="6.5"></line>
+</svg>
+
 </a>
-<label class="le">
+<span>
 instagram
-</label>
+</span>
 </div>
 </div>
     </section>
@@ -147,5 +151,65 @@ developed by NacerDev25
 </p>
     </div>
 </footer>
+<nav class="bottom-nav" role="navigation" aria-label="Bottom Navigation">
+    <ul class="bottom-items">
+        <li class="ll">
+            <a href="#tit1" class="bottom-link">
+<!-- Home Icon -->
+<svg width="26" height="26" viewBox="0 0 24 24" fill="none"
+     stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M3 9l9-7 9 7"></path>
+    <path d="M9 22V12h6v10"></path>
+</svg>
+<span>
+    home
+</span>
+            </a>
+        </li>
+        <li class="ll">
+            <a href="#tit2" class="bottom-link">
+<!-- Services Icon -->
+<svg width="26" height="26" viewBox="0 0 24 24" fill="none" 
+     stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+  <path d="M4 21v-2a4 4 0 0 1 4-4h8a4 4 0 0 1 4 4v2"></path>
+  <circle cx="12" cy="7" r="4"></circle>
+</svg>
+<span>
+    Services 
+</span>
+            </a>
+        </li>
+        <li class="ll">
+            <a href="#tit3" class="bottom-link">
+<!-- Projects Icon -->
+<svg width="26" height="26" viewBox="0 0 24 24" fill="none" 
+     stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+  <rect x="3" y="3" width="7" height="7"></rect>
+  <rect x="14" y="3" width="7" height="7"></rect>
+  <rect x="14" y="14" width="7" height="7"></rect>
+  <rect x="3" y="14" width="7" height="7"></rect>
+</svg>
+<span>
+    Projects
+</span>
+
+            </a>
+        </li>
+        <li class="ll">
+            <a href="#tit4" class="bottom-link">
+<!-- Contact Icon -->
+<svg width="26" height="26" viewBox="0 0 24 24" fill="none" 
+     stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+  <path d="M21 10c0 6-9 11-9 11s-9-5-9-11a9 9 0 0 1 18 0z"></path>
+  <circle cx="12" cy="10" r="3"></circle>
+</svg>
+<span>
+    Contact
+</span>
+
+            </a>
+        </li>
+    </ul>
+</nav>
 </body>
 </html>
