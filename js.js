@@ -1,19 +1,15 @@
 document.addEventListener("DOMContentLoaded", function() {
-    // ننسخو d1 و d2 ونحطوهم داخل القائمة الجانبية
-    const a = document.getElementById("d1").cloneNode(true);
-    const b = document.getElementById("n1").cloneNode(true);
-    const c = document.getElementById("nm");
-    c.appendChild(a);
-    c.appendChild(b);
+    let a = document.getElementById("tit1").textContent; // النص الأصلي
+    let isHome = true; // متغير الحالة
 
-    // زر فتح/غلق القائمة
-    const d = document.getElementById("menubut");
-    const f = document.getElementById("nm");
-
-    d.addEventListener("click", function() {
-        f.classList.toggle("active");
+    document.getElementById("tit1").addEventListener("click", function() {
+if (isHome) {
+    document.getElementById("tit1").textContent="about me"
+    isHome = false;
+}
+else {
+    document.getElementById("tit1").textContent="Home"
+    isHome = true
+}
     });
-
-    
-    
 });
