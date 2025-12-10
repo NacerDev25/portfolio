@@ -12,4 +12,16 @@ else {
     isHome = true
 }
     });
-});
+    let b = document.getElementById("tit2").textContent
+    let isServices =true               
+    document.getElementById("tit2").addEventListener("click", function(){
+if (isServices) {
+document.getElementById("tit2").textContent="myServices"
+isServices = false;
+}
+else {
+    document.getElementById("tit2").textContent="services"
+    isServices = true
+}
+    })
+    });
