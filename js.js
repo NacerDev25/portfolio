@@ -12,8 +12,8 @@ else {
     isHome = true
 }
     });
-    let b = document.getElementById("tit2").textContent
-    let isServices =true               
+    let b = document.getElementById("tit2").textContent;
+    let isServices =true;
     document.getElementById("tit2").addEventListener("click", function(){
 if (isServices) {
 document.getElementById("tit2").textContent="myServices"
@@ -23,5 +23,16 @@ else {
     document.getElementById("tit2").textContent="services"
     isServices = true
 }
+    });
+    let isProjects = document.getElementById("tit3").textContent
+    document.getElementById("").addEventListener("click", function(){
+        if (isProjects) {
+            document.getElementById("tit3").textContent="My Projects"
+            isProjects = false;
+        }
+        else {
+            document.getElementById("tit3").textContent="projects"
+            isProjects = true;
+        }
     })
     });
