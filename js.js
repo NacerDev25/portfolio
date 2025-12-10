@@ -24,7 +24,7 @@ else {
     isServices = true
 }
     });
-    let isProjects = document.getElementById("tit3").textContent
+    let isProjects = true;
     document.getElementById("").addEventListener("click", function(){
         if (isProjects) {
             document.getElementById("tit3").textContent="My Projects"
