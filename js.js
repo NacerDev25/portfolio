@@ -25,7 +25,7 @@ else {
 }
     });
     let isProjects = true;
-    document.getElementById("").addEventListener("click", function(){
+    document.getElementById("tit3").addEventListener("click", function(){
         if (isProjects) {
             document.getElementById("tit3").textContent="My Projects"
             isProjects = false;
