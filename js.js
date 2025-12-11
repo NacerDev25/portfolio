@@ -35,4 +35,16 @@ else {
             isProjects = true;
         }
     })
+    let isContact = true;
+    document.getElementById("tit4").addEventListener("click", function(){
+        if (isContact) {
+            document.getElementById("tit4").textContent="Contact Details"
+            isContact = false;
+        }
+        else {
+            isContact
+            document.getElementById("tit4").textContent="contact"
+            isContact = true;
+        }
+    })
     });
