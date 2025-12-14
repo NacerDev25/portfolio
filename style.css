@@ -70,6 +70,19 @@ header {
 .ddvv {
     display: flex;
     justify-content: center;
+  flex-direction: column;
+    align-items: center; /* Add this to vertically align image and text */
+    flex-wrap: wrap; /* Allow items to wrap on smaller screens */
+    gap: 2rem; /* Add some space between image and text */
+}
+
+.ddvv img[src="my.jpg"] { /* Specific selector for the home section image */
+    width: 180px; /* Adjust size as needed */
+    height: 180px; /* Adjust size as needed */
+    border-radius: 50%; /* Make it circular */
+    object-fit: cover; /* Ensure image covers the area */
+    border: 3px solid #38BDF8; /* Blue border */
+    box-shadow: 0 0 15px rgba(56, 189, 248, 0.5); /* Glowing effect */
 }
 
 #pa1 {
