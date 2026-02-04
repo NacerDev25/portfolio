@@ -53,15 +53,16 @@ document.addEventListener('DOMContentLoaded', () => {
         // Get the target section ID from the href
         const targetSectionId = event.currentTarget.getAttribute('href').substring(1); // Remove '#'
 
-        // Hide all sections and then show the target section
-        sections.forEach(section => {
-            if (section.querySelector('h2').id === targetSectionId) {
-                section.classList.remove('section-hidden');
-            } else {
-                section.classList.add('section-hidden');
-            }
-        });
-    };
+                    // Hide all sections and then show the target section
+                    sections.forEach(section => {
+                        if (section.querySelector('h2').id === targetSectionId) {
+                            section.classList.remove('section-hidden');
+                            // Set focus on the h2 title for accessibility
+                            section.querySelector('h2').focus();
+                        } else {
+                            section.classList.add('section-hidden');
+                        }
+                    });    };
 
     // Add event listeners to bottom navigation links
     bottomNavLinks.forEach(link => {
