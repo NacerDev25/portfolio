@@ -212,6 +212,10 @@ section.contact .ddvv {
     stroke: currentColor;
 }
 
+.section-hidden {
+    display: none;
+}
+
 /* 9. التوافق مع الشاشات (Media Queries) */
 @media (max-width: 768px) {
     header {
