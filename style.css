@@ -183,6 +183,10 @@ section.contact .ddvv {
     border-top: 1px solid #334155;
 }
 
+.section-hidden {
+    display: none !important;
+}
+
 .bottom-items {
     display: flex;
     justify-content: space-around;
