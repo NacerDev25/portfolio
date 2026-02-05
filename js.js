@@ -23,9 +23,15 @@ document.addEventListener('DOMContentLoaded', () => {
         if (targetSection) {
             targetSection.classList.remove('section-hidden');
             targetSection.setAttribute('aria-hidden', 'false');
-            // Ensure focus is managed for accessibility, especially for keyboard users
-            targetSection.focus(); 
-            // Also reset scroll position for the section
+            
+            // Find the main heading within the section and focus it
+            const mainHeading = targetSection.querySelector('h2');
+            if (mainHeading && mainHeading.tabIndex === -1) { 
+                mainHeading.focus();
+            } else {
+                targetSection.focus(); // Fallback to section focus if no suitable heading
+            }
+            
             window.scrollTo(0, 0); 
         }
     };
