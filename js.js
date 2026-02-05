@@ -58,7 +58,9 @@ document.addEventListener('DOMContentLoaded', () => {
                         if (section.querySelector('h2').id === targetSectionId) {
                             section.classList.remove('section-hidden');
                             // Set focus on the h2 title for accessibility
-                            section.querySelector('h2').focus();
+                            requestAnimationFrame(() => {
+                                section.querySelector('h2').focus();
+                            });
                         } else {
                             section.classList.add('section-hidden');
                         }
