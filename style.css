@@ -93,26 +93,40 @@ header {
     line-height: 1.7;
 }
 
-/* 5. قسم الخدمات */
-/* Re-using .ddvv for services grid */
-section.services .ddvv {
+/* 5. قسم الخدمات والمشاريع */
+/* Re-using .ddvv for services and projects grid */
+section.services .ddvv, 
+section.projects .ddvv {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 2rem;
+    width: 100%;
 }
 
-.ddv {
+.ddv, .project-card {
     background-color: #1F2937; /* لون خلفية العناصر */
-    border: 1px solid transparent;
+    border: 1px solid #374151;
     border-radius: 12px;
     padding: 2rem;
     text-align: center;
-    transition: transform 0.3s ease, border-color 0.3s ease;
+    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), border-color 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
 }
 
-.ddv:hover {
+.ddv:hover, .project-card:hover {
     transform: translateY(-10px);
     border-color: #38BDF8; /* اللون الأساسي */
+    box-shadow: 0 10px 25px -5px rgba(56, 189, 248, 0.2);
+}
+
+.project-img-placeholder {
+    transition: background-color 0.3s ease;
+}
+
+.project-card:hover .project-img-placeholder {
+    background-color: #4B5563 !important;
 }
 
 .imo {
@@ -123,27 +137,9 @@ section.services .ddvv {
 }
 
 /* 6. قسم المشاريع (تصميم مقترح) */
-.project-card {
-    /* Using same styles as service card .ddv */
-    background-color: #1F2937;
-    border: 1px solid transparent;
-    border-radius: 12px;
-    padding: 2rem;
-    text-align: center;
-    transition: transform 0.3s ease, border-color 0.3s ease;
-}
-
-.project-card:hover {
-    transform: translateY(-10px);
-    border-color: #38BDF8;
-}
-
 .project-links {
-    margin-top: 1rem;
-}
-
-.project-links a {
-    margin: 0 0.5rem;
+    margin-top: auto;
+    padding-top: 1.5rem;
 }
 
 /* 7. قسم التواصل */
