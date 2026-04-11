@@ -1,2 +1,1 @@
-PHQ-9 Digital Tool
-​"A smart digital version of the PHQ-9 scale, designed to measure the severity of depression by merging UI/UX development with Clinical Psychology. This accessible tool (A11y) provides immediate preliminary screening through a seamless experience. Note: Results are indicative and do not replace a professional clinical diagnosis or consultation."
+https://nacerdev25.github.io/phq-9/index.html
