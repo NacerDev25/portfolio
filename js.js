@@ -67,4 +67,51 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     });
+
+    // Contact link protection (Obfuscation)
+    const emailLink = document.querySelector('.contact-email');
+    const phoneLink = document.querySelector('.contact-phone');
+
+    if (emailLink) {
+        emailLink.addEventListener('mouseenter', () => {
+            const user = emailLink.getAttribute('data-user');
+            const domain = emailLink.getAttribute('data-domain');
+            if (user && domain) {
+                const email = `${user}@${domain}`;
+                emailLink.setAttribute('href', `mailto:${email}`);
+                emailLink.textContent = email;
+            }
+        });
+        // For mobile/touch and screen readers
+        emailLink.addEventListener('click', (e) => {
+            const user = emailLink.getAttribute('data-user');
+            const domain = emailLink.getAttribute('data-domain');
+            if (user && domain) {
+                const email = `${user}@${domain}`;
+                if (emailLink.getAttribute('href') === '#') {
+                    e.preventDefault();
+                    emailLink.setAttribute('href', `mailto:${email}`);
+                    emailLink.textContent = email;
+                    window.location.href = `mailto:${email}`;
+                }
+            }
+        });
+    }
+
+    if (phoneLink) {
+        phoneLink.addEventListener('mouseenter', () => {
+            const phone = phoneLink.getAttribute('data-phone');
+            if (phone) {
+                phoneLink.setAttribute('href', `tel:${phone}`);
+            }
+        });
+        phoneLink.addEventListener('click', (e) => {
+            const phone = phoneLink.getAttribute('data-phone');
+            if (phone && phoneLink.getAttribute('href') === '#') {
+                e.preventDefault();
+                phoneLink.setAttribute('href', `tel:${phone}`);
+                window.location.href = `tel:${phone}`;
+            }
+        });
+    }
 });
