@@ -67,22 +67,37 @@ header {
 }
 
 /* 4. قسم "home" (القسم الترحيبي) */
-.ddvv {
+#tit1 .ddvv {
     display: flex;
-    justify-content: center;
-  flex-direction: column;
-    align-items: center; /* Add this to vertically align image and text */
-    flex-wrap: wrap; /* Allow items to wrap on smaller screens */
-    gap: 2rem; /* Add some space between image and text */
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+    background-color: #1F2937; /* خلفية البطاقة */
+    padding: 3.5rem 2rem;
+    border-radius: 24px;
+    border: 1px solid #374151;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4); /* ظل عميق للبطاقة */
+    max-width: 850px;
+    margin: 0 auto;
+    transition: transform 0.3s ease;
 }
 
-.ddvv img[src="my.jpg"] { /* Specific selector for the home section image */
-    width: 180px; /* Adjust size as needed */
-    height: 180px; /* Adjust size as needed */
-    border-radius: 50%; /* Make it circular */
-    object-fit: cover; /* Ensure image covers the area */
-    border: 3px solid #38BDF8; /* Blue border */
-    box-shadow: 0 0 15px rgba(56, 189, 248, 0.5); /* Glowing effect */
+#tit1 .ddvv:hover {
+    transform: translateY(-5px); /* تأثير بسيط عند التحويم فوق البطاقة */
+}
+
+#tit1 .ddvv img { 
+    width: 220px; /* مقاس احترافي متناسق */
+    height: 220px;
+    border-radius: 50%; /* جعل الصورة دائرية تماماً */
+    object-fit: cover; /* الحفاظ على أبعاد الصورة داخل الدائرة */
+    border: 4px solid #38BDF8; /* إطار أزرق أنيق */
+    box-shadow: 0 0 25px rgba(56, 189, 248, 0.3); /* توهج خفيف حول الصورة */
+    transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+#tit1 .ddvv img:hover {
+    transform: scale(1.08) rotate(2deg); /* تأثير تفاعلي عند لمس الصورة */
 }
 
 #pa1 {
@@ -228,6 +243,16 @@ section.contact .ddvv {
     
     .bottom-nav {
         display: flex; /* إظهار شريط التنقل السفلي */
+    }
+
+    /* تعديل قسم الهوم للهواتف */
+    #tit1 .ddvv {
+        padding: 2rem 1.5rem; /* تقليل المسافات الداخلية في الهاتف */
+    }
+
+    #tit1 .ddvv img {
+        width: 180px; /* حجم أصغر متناسق مع الهاتف */
+        height: 180px;
     }
 
     /* تعديل قسم الخدمات ليصبح عمودياً */
