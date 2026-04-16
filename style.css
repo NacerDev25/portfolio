@@ -296,3 +296,23 @@ p#pf {
     font-weight: bold;
 }
  
+/* تنسيقات متجاوبة لصورة المشروع */
+.project-img {
+    height: 200px; /* الارتفاع المثالي للحاسوب */
+    width: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease; /* حركة سلسة عند التفاعل */
+    border-radius: 8px;
+}
+
+.project-card:hover .project-img {
+    transform: scale(1.03); /* تأثير تكبير بسيط عند التمرير */
+}
+
+@media (max-width: 768px) {
+    .project-img {
+        height: auto;
+        max-height: 250px;
+        aspect-ratio: 16 / 9; /* نسبة أبعاد سينمائية للهاتف */
+    }
+}
