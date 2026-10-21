@@ -41,10 +41,11 @@
       </nav>
       <div class="header-actions">
         <div class="settings-dropdown" id="settings-dropdown">
-          <button class="settings-toggle" id="settings-toggle" type="button" aria-expanded="false" aria-controls="settings-panel" aria-haspopup="true">
+          <button class="settings-toggle" id="settings-toggle" type="button" aria-expanded="false" aria-controls="settings-panel" aria-haspopup="dialog">
             الإعدادات
           </button>
-          <div class="settings-panel" id="settings-panel" role="menu" aria-labelledby="settings-toggle">
+          <div class="settings-overlay" id="settings-overlay"></div>
+          <div class="settings-panel" id="settings-panel" role="dialog" aria-modal="true" aria-labelledby="settings-toggle">
             <div class="settings-panel-section">
               <span class="settings-panel-label">المظهر</span>
               <div class="theme-toggle-group" role="group" aria-label="تغيير المظهر">

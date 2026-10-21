@@ -238,47 +238,51 @@ function initSettingsDropdown() {
   const settingsToggle = document.getElementById("settings-toggle");
   const settingsDropdown = document.getElementById("settings-dropdown");
   const settingsPanel = document.getElementById("settings-panel");
+  const settingsOverlay = document.getElementById("settings-overlay");
+  const body = document.body;
 
   if (!settingsToggle || !settingsDropdown) return;
+
+  const focusableSelector = 'button:not([disabled]), [href], select:not([disabled]), input:not([disabled]), textarea:not([disabled]), [tabindex]:not([tabindex="-1"]):not([disabled])';
+  let previouslyFocusedElement = null;
+
+  function getFocusableElements() {
+    if (!settingsPanel) return [];
+    return Array.from(settingsPanel.querySelectorAll(focusableSelector)).filter((el) => {
+      return el.offsetWidth > 0 || el.offsetHeight > 0 || el === document.activeElement;
+    });
+  }
+
+  function setInertOutside(inert) {
+    const elementsToInert = [document.querySelector(".nav-desktop"), document.querySelector(".main-content"), document.querySelector(".site-footer")];
+    elementsToInert.forEach((el) => {
+      if (!el) return;
+      if (inert) {
+        el.setAttribute("inert", "");
+      } else {
+        el.removeAttribute("inert");
+      }
+    });
+  }
 
   function closeDropdown() {
     settingsDropdown.classList.remove("is-open");
     settingsToggle.setAttribute("aria-expanded", "false");
+    document.removeEventListener("keydown", trapFocus);
+    setInertOutside(false);
+    body.style.overflow = "";
+    if (previouslyFocusedElement && typeof previouslyFocusedElement.focus === "function") {
+      previouslyFocusedElement.focus();
+    }
   }
 
-  function openDropdown() {
-    settingsDropdown.classList.add("is-open");
-    settingsToggle.setAttribute("aria-expanded", "true");
-    const firstOption = settingsPanel?.querySelector("button, select");
-    firstOption?.focus();
-  }
-
-  settingsToggle.addEventListener("click", (event) => {
-    event.stopPropagation();
-    if (settingsDropdown.classList.contains("is-open")) {
-      closeDropdown();
-    } else {
-      openDropdown();
-    }
-  });
-
-  document.addEventListener("click", (event) => {
-    if (!settingsDropdown.contains(event.target)) {
-      closeDropdown();
-    }
-  });
-
-  document.addEventListener("keydown", (event) => {
-    if (event.key === "Escape" && settingsDropdown.classList.contains("is-open")) {
-      closeDropdown();
-      settingsToggle.focus();
-    }
-  });
-
-  settingsPanel?.addEventListener("keydown", (event) => {
+  function trapFocus(event) {
     if (event.key !== "Tab") return;
-    const focusableElements = settingsPanel.querySelectorAll('button, select, [tabindex]:not([tabindex="-1"])');
-    if (focusableElements.length === 0) return;
+    const focusableElements = getFocusableElements();
+    if (focusableElements.length === 0) {
+      event.preventDefault();
+      return;
+    }
     const firstElement = focusableElements[0];
     const lastElement = focusableElements[focusableElements.length - 1];
 
@@ -292,6 +296,38 @@ function initSettingsDropdown() {
         firstElement.focus();
         event.preventDefault();
       }
+    }
+  }
+
+  function openDropdown() {
+    previouslyFocusedElement = document.activeElement;
+    settingsDropdown.classList.add("is-open");
+    settingsToggle.setAttribute("aria-expanded", "true");
+    body.style.overflow = "hidden";
+    setInertOutside(true);
+    document.addEventListener("keydown", trapFocus);
+    window.requestAnimationFrame(() => {
+      const focusableElements = getFocusableElements();
+      if (focusableElements.length > 0) {
+        focusableElements[0].focus();
+      }
+    });
+  }
+
+  settingsToggle.addEventListener("click", (event) => {
+    event.stopPropagation();
+    if (settingsDropdown.classList.contains("is-open")) {
+      closeDropdown();
+    } else {
+      openDropdown();
+    }
+  });
+
+  settingsOverlay?.addEventListener("click", closeDropdown);
+
+  document.addEventListener("keydown", (event) => {
+    if (event.key === "Escape" && settingsDropdown.classList.contains("is-open")) {
+      closeDropdown();
     }
   });
 }
