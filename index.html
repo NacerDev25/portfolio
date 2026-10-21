@@ -1,321 +1,139 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" dir="ltr">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nacer Dev 25</title>
-
-    <!-- Open Graph / LinkedIn -->
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://nacerdev25.github.io/">
-    <meta property="og:title" content="Nacer - Web Developer & Clinical Psychology Expert">
-    <meta property="og:description" content="Professional Web Developer specializing in UI/UX and Accessibility. Merging programming expertise with Clinical Psychology to build human-centered digital experiences.">
-    <meta property="og:image" content="Profile picture.jpg">
-
-    <!-- Twitter -->
-    <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:url" content="https://nacerdev25.github.io/">
-    <meta property="twitter:title" content="Nacer - Web Developer & Clinical Psychology Expert">
-    <meta property="twitter:description" content="Professional Web Developer specializing in UI/UX and Accessibility. Merging programming expertise with Clinical Psychology to build human-centered digital experiences.">
-    <meta property="twitter:image" content="Profile picture.jpg">
-
-<link rel="stylesheet" href="style.css">    
-<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-<script src="js.js" defer></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>عني | About Me</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Tajawal:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
-<header class="ceko">
-<div class="dv" id="d1">
-<h1 data-aos="fade-up">
-    welcome to my portfolio
-</h1>
-<div id="lo" style="display: flex; justify-content: center; align-items: center; padding-bottom: 20px;">
-    <svg width="150" height="180" viewBox="0 0 150 180" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="logo-title">
-        <title id="logo-title">Nacer Developer Logo</title>
-        <style>
-            /* Base Styles */
-            .circuit-path { stroke: white; stroke-width: 1.5; fill: none; }
-            .circuit-node { fill: white; }
-            .logic-core-circle { stroke: white; stroke-width: 1.5; fill: none; }
-            .logic-core-text { font-family: 'Fira Code', monospace; font-size: 16px; text-anchor: middle; alignment-baseline: central; font-weight: 500; fill: white; }
-            .identity-main { font-family: 'Poppins', sans-serif; font-size: 22px; font-weight: 700; text-anchor: middle; fill: white; }
-            .identity-sub { font-family: 'Poppins', sans-serif; font-size: 10px; font-weight: 400; text-anchor: middle; letter-spacing: 0.5px; fill: white; }
-
-            /* Animations */
-            #lo svg {
-                transition: transform 0.3s ease-in-out, filter 0.3s ease-in-out;
-                overflow: visible; /* Ensures the glow isn't clipped */
-            }
-
-            #lo:hover svg {
-                transform: scale(1.05);
-                filter: brightness(1.2);
-            }
-
-            .circuit-path {
-                stroke-dasharray: 1000;
-                stroke-dashoffset: 1000;
-                animation: draw-path 2s ease-out forwards;
-            }
-
-            .logic-core-circle {
-                animation: pulse-glow 4s ease-in-out infinite alternate;
-            }
-
-            @keyframes draw-path {
-                to {
-                    stroke-dashoffset: 0;
-                }
-            }
-
-            @keyframes pulse-glow {
-                from {
-                    filter: drop-shadow(0 0 3px rgba(255, 255, 255, 0.6));
-                }
-                to {
-                    filter: drop-shadow(0 0 10px #ffffff);
-                }
-            }
-            
-            /* Staggered drawing effect for the paths */
-            .circuit-paths path.circuit-path:nth-of-type(1) { animation-delay: 0s; }
-            .circuit-paths path.circuit-path:nth-of-type(2) { animation-delay: 0.2s; }
-            .circuit-paths path.circuit-path:nth-of-type(3) { animation-delay: 0.4s; }
-            .circuit-paths path.circuit-path:nth-of-type(4) { animation-delay: 0.6s; }
-            .circuit-paths path.circuit-path:nth-of-type(5) { animation-delay: 0.8s; }
-            .circuit-paths path.circuit-path:nth-of-type(6) { animation-delay: 1.0s; }
-
-        </style>
-        <defs>
-            <marker id="cursor-arrowhead" viewBox="0 0 10 10" refX="8" refY="5"
-                markerWidth="6" markerHeight="6"
-                orient="auto-start-reverse">
-                <path d="M 0 0 L 10 5 L 0 10 z" fill="white" />
-            </marker>
-        </defs>
-        
-        <g class="logo-icon" transform="translate(75, 60)">
-            <circle class="logic-core-circle" cx="0" cy="0" r="20" />
-            <text class="logic-core-text" x="0" y="0">{ }</text>
-    
-            <g class="circuit-paths">
-                <path class="circuit-path" d="M -14.14 -14.14 L -30 -30 H -50" />
-                <circle class="circuit-node" cx="-50" cy="-30" r="2.5" />
-                
-                <path class="circuit-path" d="M 14.14 -14.14 L 30 -30 H 50" />
-                <circle class="circuit-node" cx="50" cy="-30" r="2.5" />
-    
-                <path class="circuit-path" d="M 20 0 H 45" />
-                <circle class="circuit-node" cx="45" cy="0" r="2.5" />
-
-                <path class="circuit-path" d="M 14.14 14.14 L 30 30 H 50" />
-                <circle class="circuit-node" cx="50" cy="30" r="2.5" />
-                
-                <path class="circuit-path" d="M -14.14 14.14 L -30 30 H -50" />
-                <circle class="circuit-node" cx="-50" cy="30" r="2.5" />
-                
-                <path class="circuit-path" d="M -20 0 H -40 V 10 L -15 0" marker-end="url(#cursor-arrowhead)" />
-            </g>
-        </g>
-        
-        <g class="logo-text" transform="translate(75, 135)">
-            <text class="identity-main" y="0">NACER</text>
-            <text class="identity-sub" y="15">DEVELOPER</text>
-        </g>
-    </svg>
-</div></div>
-<nav id="n1">
-    <ul>
-        <li class="ll">
-            <a href="#tit1" class="nav-link">
-home
-            </a>
-        </li>
-        <li class="ll">
-            <a href="#tit2" class="nav-link">
-services                
-            </a>
-        </li>
-        <li class="ll">
-            <a href="#tit3" class="nav-link">
-projects
-            </a>
-        </li>
-        <li class="ll">
-            <a href="#tit4" class="nav-link">
-contact
-            </a>
-        </li>
-    </ul>
-</nav>
-</header>    
-<main>
-    <section class="seo" id="tit1">
-        <h2 tabindex="-1">
-home
-        </h2>
-        <div class="ddvv">
-            <img src="Profile picture.jpg" alt="A professional portrait of the developer wearing a navy blue shirt and sunglasses, standing with arms crossed.">
-            <p id="pa1" data-aos="fade-up">
-                            Nasser is a professional web developer with an academic background in clinical psychology (Master 2). He integrates his passion for programming with a deep understanding of the human mind to design innovative and interactive user interfaces (UI) and user experiences (UX). He always strives to provide technical solutions that combine high performance with carefully considered design to offer a unique user experience.
-            </p>
-        </div>
-    </section>
-    <section class="seo services" id="tit2">
-        <h2 tabindex="-1">
-services                
-        </h2>
-        <div class="ddvv">
-            <div class="ddv" data-aos="fade-up" data-aos-delay="100">
-                <h3 class="lab">
-                    html
-                </h3>
-                <svg class="imo" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-labelledby="html-service-title">
-                    <title id="html-service-title">HTML Service Icon</title>
-                    <polyline points="16 18 22 12 16 6"></polyline><polyline points="8 6 2 12 8 18"></polyline>
-                </svg>
-                <p class="po">
-                    I offer a website development service using HTML to build the basic structure of websites and web pages. I ensure a clean and organized code, perfect for personal websites or landing pages.
-                </p>
+  <!-- الهيدر المشترك -->
+  <header class="site-header" id="site-header">
+    <div class="header-container">
+      <div class="header-left">
+        <button class="menu-toggle" id="menu-toggle" type="button" aria-expanded="false" aria-controls="sidebar" aria-label="فتح القائمة الجانبية">
+          <span class="menu-toggle-bar"></span>
+          <span class="menu-toggle-bar"></span>
+          <span class="menu-toggle-bar"></span>
+        </button>
+        <a class="site-logo" href="index.html" aria-label="الذهاب للصفحة الرئيسية">Logo</a>
+      </div>
+      <nav class="nav-desktop" aria-label="التنقل الرئيسي">
+        <ul class="nav-desktop-list">
+          <li class="nav-desktop-item">
+            <a class="nav-desktop-link is-active" href="index.html" data-page="index">عني</a>
+          </li>
+          <li class="nav-desktop-item">
+            <a class="nav-desktop-link" href="projects.html" data-page="projects">المشاريع</a>
+          </li>
+          <li class="nav-desktop-item">
+            <a class="nav-desktop-link" href="services.html" data-page="services">الخدمات</a>
+          </li>
+          <li class="nav-desktop-item">
+            <a class="nav-desktop-link" href="contact.html" data-page="contact">التواصل</a>
+          </li>
+        </ul>
+      </nav>
+      <div class="header-actions">
+        <div class="settings-dropdown" id="settings-dropdown">
+          <button class="settings-toggle" id="settings-toggle" type="button" aria-expanded="false" aria-controls="settings-panel" aria-haspopup="true">
+            الإعدادات
+          </button>
+          <div class="settings-panel" id="settings-panel" role="menu" aria-labelledby="settings-toggle">
+            <div class="settings-panel-section">
+              <span class="settings-panel-label">المظهر</span>
+              <div class="theme-toggle-group" role="group" aria-label="تغيير المظهر">
+                <button class="theme-option is-active" type="button" data-theme="light">الوضع الفاتح</button>
+                <button class="theme-option" type="button" data-theme="dark">الوضع الداكن</button>
+              </div>
             </div>
-            <div class="ddv" data-aos="fade-up" data-aos-delay="200">
-<h3 class="lab">
-    css
-</h3>
-<svg class="imo" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-labelledby="css-service-title">
-    <title id="css-service-title">CSS Service Icon</title>
-    <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"></path>
-</svg>
-<p class="po">
-        Transform your ideas into unique visual experiences with CSS. I design responsive user interfaces that ensure a perfect display on all devices, with a focus on aesthetics and performance. I provide design solutions that enhance your brand's identity and captivate your visitors from the first glance.
-</p>
+            <div class="settings-panel-section">
+              <label class="settings-panel-label" for="language-select-header">اللغة</label>
+              <select class="language-select" id="language-select-header" aria-label="اختيار اللغة">
+                <option value="en" selected>English</option>
+                <option value="ar">العربية</option>
+                <option value="fr">Français</option>
+              </select>
             </div>
-                        <div class="ddv" data-aos="fade-up" data-aos-delay="300">
-            <h3 class="lab">
-                js
-            </h3><svg class="imo" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-labelledby="js-service-title">
-    <title id="js-service-title">JavaScript Service Icon</title>
-    <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon>
-</svg>
-<p class="po">
-        I offer development services using JavaScript to create interactive user interfaces and dynamic web solutions. I am committed to delivering clean and efficient code that ensures excellent performance and a smooth user experience for your website.
-</p>
-            </div>
+          </div>
         </div>
-    </section>
-    <section class="seo projects" id="tit3">
-        <h2 tabindex="-1">
-            projects
-        </h2>
-        <div class="ddvv">
-            <a href="https://nacerdev25.github.io/phq-9/index.html" target="_blank" rel="noopener noreferrer" style="text-decoration: none; color: inherit; display: block;">
-                <div class="project-card" data-aos="fade-up" data-aos-delay="100">
-                    <img src="project image.jpg" alt="Digital interface of the PHQ-9 depression screening tool" class="project-img" style="width: 100%; object-fit: cover; border-radius: 8px; margin-bottom: 1.5rem;">
-                    <h3 class="lab">PHQ-9 Digital Tool</h3>
-                    <p class="po">
-                        "A smart digital version of the PHQ-9 scale, designed to measure the severity of depression by merging UI/UX development with Clinical Psychology. This accessible tool (A11y) provides immediate preliminary screening through a seamless experience. Note: Results are indicative and do not replace a professional clinical diagnosis or consultation."
-                    </p>
-                    <div class="project-links">
-                        <span style="color: #38BDF8; font-weight: 600; text-decoration: underline;">View Project →</span>
-                    </div>
-                </div>
-            </a>
-        </div>
-    </section>
-    <section class="seo" id="tit4">
-<h2 tabindex="-1">
-    contact
-</h2>
-<div class="ddvv">
-<div class="di" data-aos="fade-up" data-aos-delay="100">
-<svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-mail" aria-labelledby="email-contact-title">
-    <title id="email-contact-title">Email Icon</title>
-    <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
-    <polyline points="22,6 12,13 2,6"></polyline>
-</svg>
-<a href="#" class="le contact-email" data-user="nacerboutaldja96" data-domain="gmail.com">
-    nacerboutaldja96 [at] gmail [dot] com
-</a>
-</div>
-<div class="di" data-aos="fade-up" data-aos-delay="200">
-<svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-phone" aria-labelledby="phone-contact-title">
-    <title id="phone-contact-title">Phone Icon</title>
-    <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.63A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
-</svg>
-<a href="#" class="le contact-phone" data-phone="+213791102039">
-    +213 791 10 20 39
-</a>
-</div>
-</div>
-    </section>
-</main>
-<footer class="ceko">
-    <div class="dv">
-<p id="pf">
-developed by NacerDev25
-</p>
+      </div>
     </div>
-</footer>
-<nav class="bottom-nav" role="navigation" aria-label="Bottom Navigation">
-    <ul class="bottom-items">
-        <li class="ll">
-            <a href="#tit1" class="bottom-link">
-<!-- Home Icon -->
-<svg width="26" height="26" viewBox="0 0 24 24" fill="none"
-     stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-    <path d="M3 9l9-7 9 7"></path>
-    <path d="M9 22V12h6v10"></path>
-</svg>
-<span>
-    home
-</span>
-            </a>
-        </li>
-        <li class="ll">
-            <a href="#tit2" class="bottom-link">
-<!-- Services Icon -->
-<svg width="26" height="26" viewBox="0 0 24 24" fill="none" 
-     stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-  <path d="M4 21v-2a4 4 0 0 1 4-4h8a4 4 0 0 1 4 4v2"></path>
-  <circle cx="12" cy="7" r="4"></circle>
-</svg>
-<span>
-    Services 
-</span>
-            </a>
-        </li>
-        <li class="ll">
-            <a href="#tit3" class="bottom-link">
-<!-- Projects Icon -->
-<svg width="26" height="26" viewBox="0 0 24 24" fill="none" 
-     stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-  <rect x="3" y="3" width="7" height="7"></rect>
-  <rect x="14" y="3" width="7" height="7"></rect>
-  <rect x="14" y="14" width="7" height="7"></rect>
-  <rect x="3" y="14" width="7" height="7"></rect>
-</svg>
-<span>
-    Projects
-</span>
+  </header>
 
-            </a>
-        </li>
-        <li class="ll">
-            <a href="#tit4" class="bottom-link">
-<!-- Contact Icon -->
-<svg width="26" height="26" viewBox="0 0 24 24" fill="none" 
-     stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-  <path d="M21 10c0 6-9 11-9 11s-9-5-9-11a9 9 0 0 1 18 0z"></path>
-  <circle cx="12" cy="10" r="3"></circle>
-</svg>
-<span>
-    Contact
-</span>
+  <!-- القائمة الجانبية (تظهر فقط على الشاشات الصغيرة) -->
+  <aside class="sidebar" id="sidebar" aria-hidden="true">
+    <div class="sidebar-overlay" id="sidebar-overlay"></div>
+    <div class="sidebar-panel" role="dialog" aria-modal="true" aria-labelledby="sidebar-title">
+      <div class="sidebar-header">
+        <span class="sidebar-title" id="sidebar-title">القائمة</span>
+        <button class="sidebar-close" id="sidebar-close" type="button" aria-label="إغلاق القائمة">×</button>
+      </div>
+      <nav class="sidebar-nav" aria-label="التنقل الرئيسي">
+        <ul class="nav-list">
+          <li class="nav-item">
+            <a class="nav-link is-active" href="index.html" data-page="index">عني</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="projects.html" data-page="projects">المشاريع</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="services.html" data-page="services">الخدمات</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="contact.html" data-page="contact">التواصل</a>
+          </li>
+        </ul>
+      </nav>
+      <section class="sidebar-settings" aria-label="إعدادات الموقع">
+        <h2 class="settings-title">الإعدادات</h2>
+        <div class="settings-group">
+          <span class="settings-label">المظهر</span>
+          <div class="theme-toggle-group" role="group" aria-label="تغيير المظهر">
+            <button class="theme-option is-active" type="button" data-theme="light">الوضع الفاتح</button>
+            <button class="theme-option" type="button" data-theme="dark">الوضع الداكن</button>
+          </div>
+        </div>
+        <div class="settings-group">
+          <label class="settings-label" for="language-select">اللغة</label>
+          <select class="language-select" id="language-select" aria-label="اختيار اللغة">
+            <option value="en" selected>English</option>
+            <option value="ar">العربية</option>
+            <option value="fr">Français</option>
+          </select>
+        </div>
+      </section>
+    </div>
+  </aside>
 
-            </a>
-        </li>
-    </ul>
-</nav>
-<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <!-- المحتوى الرئيسي -->
+  <main class="main-content">
+    <section class="about-section" aria-labelledby="about-title">
+      <div class="container">
+        <header class="about-header">
+          <h1 class="about-title" id="about-title">عني</h1>
+          <p class="about-subtitle">مطور ويب | معرض الأعمال</p>
+        </header>
+        <div class="about-body">
+          <!-- هيكل فقط، سيُعبأ لاحقًا حسب الأمر -->
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- الفوتر المشترك -->
+  <footer class="site-footer" id="site-footer">
+    <div class="footer-container">
+      <p class="footer-copy">© 2026 اسمك. جميع الحقوق محفوظة.</p>
+    </div>
+  </footer>
+
+  <script src="js.js" defer></script>
 </body>
+
 </html>
