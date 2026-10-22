@@ -55,6 +55,26 @@ html[dir="rtl"] body {
   font-family: "Tajawal", "Inter", system-ui, sans-serif;
 }
 
+/* رابط التخطي إلى المحتوى الرئيسي - يظهر عند التركيز فقط (WCAG 2.4.1) */
+.skip-link {
+  position: fixed;
+  top: -100px;
+  inset-inline-start: 1rem;
+  z-index: 2000;
+  padding: 0.7rem 1.1rem;
+  border-radius: 0.6rem;
+  background-color: var(--accent);
+  color: var(--accent-contrast);
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.skip-link:focus-visible {
+  top: 0.75rem;
+  outline: 3px solid var(--text-primary);
+  outline-offset: 2px;
+}
+
 /* الهيدر */
 .site-header {
   position: sticky;
@@ -168,15 +188,6 @@ html[dir="rtl"] body {
   outline-offset: 2px;
 }
 
-.settings-overlay {
-  position: fixed;
-  inset: 0;
-  background-color: rgba(15, 16, 38, 0.45);
-  display: none;
-  z-index: 150;
-  cursor: pointer;
-}
-
 .settings-panel {
   position: absolute;
   top: calc(100% + 0.6rem);
@@ -202,8 +213,44 @@ html[dir="rtl"] .settings-panel {
   display: flex;
 }
 
-.settings-dropdown.is-open .settings-overlay {
-  display: block;
+.settings-panel-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding-bottom: 0.75rem;
+  border-bottom: 1px solid var(--border);
+}
+
+.settings-panel-title {
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.settings-panel-close {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2rem;
+  height: 2rem;
+  padding: 0;
+  border: 1px solid var(--border);
+  border-radius: 0.5rem;
+  background-color: transparent;
+  color: var(--text-secondary);
+  font-size: 1.25rem;
+  line-height: 1;
+  cursor: pointer;
+}
+
+.settings-panel-close:hover {
+  color: var(--text-primary);
+  border-color: var(--accent);
+}
+
+.settings-panel-close:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
 }
 
 .settings-panel-section {
@@ -395,6 +442,15 @@ html[dir="rtl"] .sidebar-panel {
   padding: 2rem 1.25rem 3rem;
 }
 
+.main-content:focus {
+  outline: none;
+}
+
+.main-content:focus-visible {
+  outline: 3px solid var(--accent);
+  outline-offset: -3px;
+}
+
 .about-section,
 .page-section {
   display: flex;
@@ -443,6 +499,241 @@ html[dir="rtl"] .sidebar-panel {
   color: var(--text-secondary);
 }
 
+/* الصفحات الداخلية والعناصر المشتركة */
+.home-main,
+.page-main {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+}
+
+.hero {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  max-width: 46rem;
+  padding-block: 1rem 0.5rem;
+}
+
+.hero-title {
+  font-size: clamp(2rem, 5vw, 3.25rem);
+  line-height: 1.2;
+  font-weight: 700;
+}
+
+.hero-lead,
+.section-lead {
+  color: var(--text-secondary);
+  font-size: 1.05rem;
+}
+
+.hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-top: 0.5rem;
+}
+
+/* الأزرار */
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 2.75rem;
+  padding: 0.6rem 1.15rem;
+  border: 1px solid transparent;
+  border-radius: 0.6rem;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.button-primary {
+  background-color: var(--accent);
+  color: var(--accent-contrast);
+}
+
+.button-primary:hover {
+  filter: brightness(1.08);
+}
+
+.button-secondary {
+  background-color: transparent;
+  color: var(--text-primary);
+  border-color: var(--text-secondary);
+}
+
+.button-secondary:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+.button:focus-visible,
+.text-link:focus-visible,
+.contact-link:focus-visible,
+.faq-item summary:focus-visible {
+  outline: 3px solid var(--accent);
+  outline-offset: 2px;
+}
+
+/* الأقسام والشبكات */
+.home-section {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.section-header {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.section-title {
+  font-size: clamp(1.4rem, 3vw, 1.9rem);
+  font-weight: 700;
+}
+
+.card-grid {
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.25rem;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  padding: 1.25rem;
+  background-color: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 0.8rem;
+}
+
+.card-title {
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+.card-text,
+.faq-answer {
+  color: var(--text-secondary);
+}
+
+.tag-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  margin-top: auto;
+  padding-top: 0.4rem;
+}
+
+.tag {
+  padding: 0.15rem 0.55rem;
+  border-radius: 999px;
+  background-color: rgba(37, 99, 235, 0.1);
+  color: var(--accent);
+  font-size: 0.85rem;
+  font-weight: 500;
+}
+
+[data-theme="dark"] .tag {
+  background-color: rgba(79, 155, 255, 0.18);
+}
+
+.text-link {
+  align-self: flex-start;
+  color: var(--accent);
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.text-link:hover {
+  text-decoration: underline;
+}
+
+.contact-link {
+  align-self: flex-start;
+  margin-top: auto;
+  color: var(--accent);
+  font-weight: 600;
+  text-decoration: none;
+  overflow-wrap: anywhere;
+}
+
+.contact-link:hover {
+  text-decoration: underline;
+}
+
+/* دعوة ختامية */
+.cta-section {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.75rem;
+  padding: 2rem 1.5rem;
+  background-color: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 0.9rem;
+}
+
+/* خطوات العمل */
+.step-list {
+  list-style: none;
+  counter-reset: step;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 1rem;
+  padding-inline-start: 0;
+}
+
+.step {
+  position: relative;
+  padding: 1rem;
+  padding-inline-start: 3rem;
+  background-color: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 0.8rem;
+  font-weight: 600;
+  counter-increment: step;
+}
+
+.step::before {
+  content: counter(step);
+  position: absolute;
+  inset-inline-start: 0.9rem;
+  top: 50%;
+  transform: translateY(-50%);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 1.6rem;
+  height: 1.6rem;
+  border-radius: 50%;
+  background-color: var(--accent);
+  color: var(--accent-contrast);
+  font-size: 0.9rem;
+}
+
+/* الأسئلة الشائعة */
+.faq-item {
+  padding: 0.9rem 1.1rem;
+  background-color: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 0.7rem;
+}
+
+.faq-item summary {
+  min-height: 2.75rem;
+  padding-block: 0.35rem;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.faq-answer {
+  margin-top: 0.65rem;
+}
+
 /* Responsive - الديسكتوب */
 @media (min-width: 992px) {
   .menu-toggle {
@@ -462,5 +753,17 @@ html[dir="rtl"] .sidebar-panel {
 
   .nav-desktop {
     display: none;
+  }
+}
+
+/* احترام تفضيل تقليل الحركة (WCAG 2.3.3) */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
   }
 }

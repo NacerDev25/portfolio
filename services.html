@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Services | Portfolio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Tajawal:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body data-page="services">
+  <!-- رابط التخطي إلى المحتوى الرئيسي (WCAG 2.4.1) -->
+  <a class="skip-link" href="#main-content" data-i18n="skipToContent">Skip to main content</a>
+
+  <!-- الهيدر المشترك -->
+  <header class="site-header" id="site-header">
+    <div class="header-container">
+      <div class="header-left">
+        <button class="menu-toggle" id="menu-toggle" type="button" aria-expanded="false" aria-controls="sidebar" data-i18n-aria-label="openMenu">
+          <span class="menu-toggle-bar"></span>
+          <span class="menu-toggle-bar"></span>
+          <span class="menu-toggle-bar"></span>
+        </button>
+        <a class="site-logo" href="index.html" data-i18n-aria-label="logoLabel">Logo</a>
+      </div>
+      <nav class="nav-desktop" aria-label="Main navigation">
+        <ul class="nav-desktop-list">
+          <li class="nav-desktop-item">
+            <a class="nav-desktop-link" href="index.html" data-page="home" data-i18n="navHome">Home</a>
+          </li>
+          <li class="nav-desktop-item">
+            <a class="nav-desktop-link" href="about.html" data-page="about" data-i18n="navAbout">About Me</a>
+          </li>
+          <li class="nav-desktop-item">
+            <a class="nav-desktop-link" href="projects.html" data-page="projects" data-i18n="navProjects">Projects</a>
+          </li>
+          <li class="nav-desktop-item">
+            <a class="nav-desktop-link is-active" href="services.html" data-page="services" data-i18n="navServices">Services</a>
+          </li>
+          <li class="nav-desktop-item">
+            <a class="nav-desktop-link" href="contact.html" data-page="contact" data-i18n="navContact">Contact</a>
+          </li>
+        </ul>
+      </nav>
+      <div class="header-actions">
+        <div class="settings-dropdown" id="settings-dropdown">
+          <button class="settings-toggle" id="settings-toggle" type="button" aria-expanded="false" aria-controls="settings-panel" data-i18n="settingsTitle">
+            Settings
+          </button>
+          <div class="settings-panel" id="settings-panel" role="group" aria-labelledby="settings-panel-title">
+            <div class="settings-panel-header">
+              <span class="settings-panel-title" id="settings-panel-title" data-i18n="settingsTitle">Settings</span>
+              <button class="settings-panel-close" id="settings-panel-close" type="button" data-i18n-aria-label="closeSettings">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="settings-panel-section">
+              <span class="settings-panel-label" data-i18n="appearance">Appearance</span>
+              <div class="theme-toggle-group" role="group" data-i18n-aria-label="appearance">
+                <button class="theme-option is-active" type="button" data-theme="light" aria-pressed="true" data-i18n="light">Light Mode</button>
+                <button class="theme-option" type="button" data-theme="dark" aria-pressed="false" data-i18n="dark">Dark Mode</button>
+              </div>
+            </div>
+            <div class="settings-panel-section">
+              <label class="settings-panel-label" for="language-select-header" data-i18n="language">Language</label>
+              <select class="language-select" id="language-select-header" data-i18n-aria-label="languageSelect">
+                <option value="en" selected>English</option>
+                <option value="ar">العربية</option>
+                <option value="fr">Français</option>
+              </select>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- القائمة الجانبية (تظهر فقط على الشاشات الصغيرة) -->
+  <aside class="sidebar" id="sidebar" aria-hidden="true">
+    <div class="sidebar-overlay" id="sidebar-overlay"></div>
+    <div class="sidebar-panel" role="dialog" aria-modal="true" aria-labelledby="sidebar-title">
+      <div class="sidebar-header">
+        <span class="sidebar-title" id="sidebar-title" data-i18n="menuTitle">Menu</span>
+        <button class="sidebar-close" id="sidebar-close" type="button" data-i18n-aria-label="closeMenu">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <nav class="sidebar-nav" aria-label="Main navigation">
+        <ul class="nav-list">
+          <li class="nav-item">
+            <a class="nav-link" href="index.html" data-page="home" data-i18n="navHome">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="about.html" data-page="about" data-i18n="navAbout">About Me</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="projects.html" data-page="projects" data-i18n="navProjects">Projects</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link is-active" href="services.html" data-page="services" data-i18n="navServices">Services</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="contact.html" data-page="contact" data-i18n="navContact">Contact</a>
+          </li>
+        </ul>
+      </nav>
+      <section class="sidebar-settings" aria-label="Site settings">
+        <h2 class="settings-title" data-i18n="settingsTitle">Settings</h2>
+        <div class="settings-group">
+          <span class="settings-label" data-i18n="appearance">Appearance</span>
+          <div class="theme-toggle-group" role="group" data-i18n-aria-label="appearance">
+            <button class="theme-option is-active" type="button" data-theme="light" aria-pressed="true" data-i18n="light">Light Mode</button>
+            <button class="theme-option" type="button" data-theme="dark" aria-pressed="false" data-i18n="dark">Dark Mode</button>
+          </div>
+        </div>
+        <div class="settings-group">
+          <label class="settings-label" for="language-select" data-i18n="language">Language</label>
+          <select class="language-select" id="language-select" data-i18n-aria-label="languageSelect">
+            <option value="en" selected>English</option>
+            <option value="ar">العربية</option>
+            <option value="fr">Français</option>
+          </select>
+        </div>
+      </section>
+    </div>
+  </aside>
+
+  <!-- المحتوى الرئيسي -->
+  <main class="main-content page-main" id="main-content" tabindex="-1">
+    <section class="page-section" aria-labelledby="services-title">
+      <header class="page-header">
+        <h1 class="page-title" id="services-title" data-i18n="servicesTitle">Services</h1>
+        <p class="page-subtitle" data-i18n="servicesSubtitle">Practical help to design, build, and improve your website.</p>
+      </header>
+      <ul class="card-grid">
+        <li class="card">
+          <h2 class="card-title" data-i18n="service1Name">Website development</h2>
+          <p class="card-text" data-i18n="service1Desc">Complete websites built with clean HTML, CSS, and JavaScript, from layout to launch.</p>
+        </li>
+        <li class="card">
+          <h2 class="card-title" data-i18n="service2Name">Responsive design</h2>
+          <p class="card-text" data-i18n="service2Desc">Interfaces that adapt smoothly from small phones to large screens.</p>
+        </li>
+        <li class="card">
+          <h2 class="card-title" data-i18n="service3Name">Accessibility improvements</h2>
+          <p class="card-text" data-i18n="service3Desc">Audits and fixes to meet WCAG 2.2 AA, including keyboard and screen-reader support.</p>
+        </li>
+        <li class="card">
+          <h2 class="card-title" data-i18n="service4Name">Performance optimisation</h2>
+          <p class="card-text" data-i18n="service4Desc">Leaner pages that load faster and feel smoother on every device.</p>
+        </li>
+      </ul>
+    </section>
+
+    <section class="page-section" aria-labelledby="process-title">
+      <div class="section-header">
+        <h2 class="section-title" id="process-title" data-i18n="processHeading">How I work</h2>
+        <p class="section-lead" data-i18n="processIntro">A simple process that keeps you informed from start to finish.</p>
+      </div>
+      <ol class="step-list">
+        <li class="step" data-i18n="process1">Discover</li>
+        <li class="step" data-i18n="process2">Plan</li>
+        <li class="step" data-i18n="process3">Build</li>
+        <li class="step" data-i18n="process4">Review</li>
+      </ol>
+    </section>
+
+    <section class="page-section" aria-labelledby="faq-title">
+      <h2 class="section-title" id="faq-title" data-i18n="faqHeading">Frequently asked questions</h2>
+      <details class="faq-item">
+        <summary data-i18n="faq1Q">How long does a project take?</summary>
+        <p class="faq-answer" data-i18n="faq1A">It depends on the scope. A single page usually takes a few days, while a full site takes one to three weeks.</p>
+      </details>
+      <details class="faq-item">
+        <summary data-i18n="faq2Q">Do you work with existing designs?</summary>
+        <p class="faq-answer" data-i18n="faq2A">Yes. I can build from a design you already have, or help shape the structure before development starts.</p>
+      </details>
+      <details class="faq-item">
+        <summary data-i18n="faq3Q">Will the site work on mobile?</summary>
+        <p class="faq-answer" data-i18n="faq3A">Yes. Every page is built to reflow and stay usable at small screen sizes.</p>
+      </details>
+    </section>
+  </main>
+
+  <!-- الفوتر المشترك -->
+  <footer class="site-footer" id="site-footer">
+    <div class="footer-container">
+      <p class="footer-copy" data-i18n="footerCopy">&copy; 2026 Your Name. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="js.js" defer></script>
+</body>
+
+</html>

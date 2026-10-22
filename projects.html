@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Projects | Portfolio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Tajawal:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body data-page="projects">
+  <!-- رابط التخطي إلى المحتوى الرئيسي (WCAG 2.4.1) -->
+  <a class="skip-link" href="#main-content" data-i18n="skipToContent">Skip to main content</a>
+
+  <!-- الهيدر المشترك -->
+  <header class="site-header" id="site-header">
+    <div class="header-container">
+      <div class="header-left">
+        <button class="menu-toggle" id="menu-toggle" type="button" aria-expanded="false" aria-controls="sidebar" data-i18n-aria-label="openMenu">
+          <span class="menu-toggle-bar"></span>
+          <span class="menu-toggle-bar"></span>
+          <span class="menu-toggle-bar"></span>
+        </button>
+        <a class="site-logo" href="index.html" data-i18n-aria-label="logoLabel">Logo</a>
+      </div>
+      <nav class="nav-desktop" aria-label="Main navigation">
+        <ul class="nav-desktop-list">
+          <li class="nav-desktop-item">
+            <a class="nav-desktop-link" href="index.html" data-page="home" data-i18n="navHome">Home</a>
+          </li>
+          <li class="nav-desktop-item">
+            <a class="nav-desktop-link" href="about.html" data-page="about" data-i18n="navAbout">About Me</a>
+          </li>
+          <li class="nav-desktop-item">
+            <a class="nav-desktop-link is-active" href="projects.html" data-page="projects" data-i18n="navProjects">Projects</a>
+          </li>
+          <li class="nav-desktop-item">
+            <a class="nav-desktop-link" href="services.html" data-page="services" data-i18n="navServices">Services</a>
+          </li>
+          <li class="nav-desktop-item">
+            <a class="nav-desktop-link" href="contact.html" data-page="contact" data-i18n="navContact">Contact</a>
+          </li>
+        </ul>
+      </nav>
+      <div class="header-actions">
+        <div class="settings-dropdown" id="settings-dropdown">
+          <button class="settings-toggle" id="settings-toggle" type="button" aria-expanded="false" aria-controls="settings-panel" data-i18n="settingsTitle">
+            Settings
+          </button>
+          <div class="settings-panel" id="settings-panel" role="group" aria-labelledby="settings-panel-title">
+            <div class="settings-panel-header">
+              <span class="settings-panel-title" id="settings-panel-title" data-i18n="settingsTitle">Settings</span>
+              <button class="settings-panel-close" id="settings-panel-close" type="button" data-i18n-aria-label="closeSettings">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="settings-panel-section">
+              <span class="settings-panel-label" data-i18n="appearance">Appearance</span>
+              <div class="theme-toggle-group" role="group" data-i18n-aria-label="appearance">
+                <button class="theme-option is-active" type="button" data-theme="light" aria-pressed="true" data-i18n="light">Light Mode</button>
+                <button class="theme-option" type="button" data-theme="dark" aria-pressed="false" data-i18n="dark">Dark Mode</button>
+              </div>
+            </div>
+            <div class="settings-panel-section">
+              <label class="settings-panel-label" for="language-select-header" data-i18n="language">Language</label>
+              <select class="language-select" id="language-select-header" data-i18n-aria-label="languageSelect">
+                <option value="en" selected>English</option>
+                <option value="ar">العربية</option>
+                <option value="fr">Français</option>
+              </select>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- القائمة الجانبية (تظهر فقط على الشاشات الصغيرة) -->
+  <aside class="sidebar" id="sidebar" aria-hidden="true">
+    <div class="sidebar-overlay" id="sidebar-overlay"></div>
+    <div class="sidebar-panel" role="dialog" aria-modal="true" aria-labelledby="sidebar-title">
+      <div class="sidebar-header">
+        <span class="sidebar-title" id="sidebar-title" data-i18n="menuTitle">Menu</span>
+        <button class="sidebar-close" id="sidebar-close" type="button" data-i18n-aria-label="closeMenu">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <nav class="sidebar-nav" aria-label="Main navigation">
+        <ul class="nav-list">
+          <li class="nav-item">
+            <a class="nav-link" href="index.html" data-page="home" data-i18n="navHome">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="about.html" data-page="about" data-i18n="navAbout">About Me</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link is-active" href="projects.html" data-page="projects" data-i18n="navProjects">Projects</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="services.html" data-page="services" data-i18n="navServices">Services</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="contact.html" data-page="contact" data-i18n="navContact">Contact</a>
+          </li>
+        </ul>
+      </nav>
+      <section class="sidebar-settings" aria-label="Site settings">
+        <h2 class="settings-title" data-i18n="settingsTitle">Settings</h2>
+        <div class="settings-group">
+          <span class="settings-label" data-i18n="appearance">Appearance</span>
+          <div class="theme-toggle-group" role="group" data-i18n-aria-label="appearance">
+            <button class="theme-option is-active" type="button" data-theme="light" aria-pressed="true" data-i18n="light">Light Mode</button>
+            <button class="theme-option" type="button" data-theme="dark" aria-pressed="false" data-i18n="dark">Dark Mode</button>
+          </div>
+        </div>
+        <div class="settings-group">
+          <label class="settings-label" for="language-select" data-i18n="language">Language</label>
+          <select class="language-select" id="language-select" data-i18n-aria-label="languageSelect">
+            <option value="en" selected>English</option>
+            <option value="ar">العربية</option>
+            <option value="fr">Français</option>
+          </select>
+        </div>
+      </section>
+    </div>
+  </aside>
+
+  <!-- المحتوى الرئيسي -->
+  <main class="main-content" id="main-content" tabindex="-1">
+    <section class="page-section" aria-labelledby="projects-title">
+      <header class="page-header">
+        <h1 class="page-title" id="projects-title" data-i18n="projectsTitle">Projects</h1>
+        <p class="page-subtitle" data-i18n="projectsSubtitle">A selection of work that reflects how I build for the web.</p>
+      </header>
+      <ul class="card-grid">
+        <li class="card project-card">
+          <h2 class="card-title" data-i18n="project1Title">Portfolio website</h2>
+          <p class="card-text" data-i18n="project1Desc">A multilingual, accessible portfolio with light and dark themes and persistent preferences.</p>
+          <p class="tag-list" lang="en">
+            <span class="tag">HTML</span>
+            <span class="tag">CSS</span>
+            <span class="tag">JavaScript</span>
+          </p>
+        </li>
+        <li class="card project-card">
+          <h2 class="card-title" data-i18n="project2Title">Analytics dashboard</h2>
+          <p class="card-text" data-i18n="project2Desc">A responsive dashboard with clear data visualisation and keyboard-friendly controls.</p>
+          <p class="tag-list" lang="en">
+            <span class="tag">JavaScript</span>
+            <span class="tag">Data visualisation</span>
+          </p>
+        </li>
+        <li class="card project-card">
+          <h2 class="card-title" data-i18n="project3Title">Task manager app</h2>
+          <p class="card-text" data-i18n="project3Desc">A small app for organising tasks, with filters, local persistence, and a simple flow.</p>
+          <p class="tag-list" lang="en">
+            <span class="tag">JavaScript</span>
+            <span class="tag">localStorage</span>
+          </p>
+        </li>
+        <li class="card project-card">
+          <h2 class="card-title" data-i18n="project4Title">Marketing landing page</h2>
+          <p class="card-text" data-i18n="project4Desc">A mobile-first landing page focused on clarity, speed, and a single call to action.</p>
+          <p class="tag-list" lang="en">
+            <span class="tag">HTML</span>
+            <span class="tag">CSS</span>
+            <span class="tag">Performance</span>
+          </p>
+        </li>
+        <li class="card project-card">
+          <h2 class="card-title" data-i18n="project5Title">Blog platform</h2>
+          <p class="card-text" data-i18n="project5Desc">A content-first blog layout with readable typography and a clean article structure.</p>
+          <p class="tag-list" lang="en">
+            <span class="tag">HTML</span>
+            <span class="tag">CSS</span>
+            <span class="tag">Accessibility</span>
+          </p>
+        </li>
+        <li class="card project-card">
+          <h2 class="card-title" data-i18n="project6Title">Weather app</h2>
+          <p class="card-text" data-i18n="project6Desc">A compact weather interface that presents current conditions at a glance.</p>
+          <p class="tag-list" lang="en">
+            <span class="tag">JavaScript</span>
+            <span class="tag">APIs</span>
+          </p>
+        </li>
+      </ul>
+    </section>
+  </main>
+
+  <!-- الفوتر المشترك -->
+  <footer class="site-footer" id="site-footer">
+    <div class="footer-container">
+      <p class="footer-copy" data-i18n="footerCopy">&copy; 2026 Your Name. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="js.js" defer></script>
+</body>
+
+</html>
