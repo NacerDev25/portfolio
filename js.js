@@ -409,7 +409,12 @@ function initSidebar() {
     sidebar.setAttribute("aria-hidden", "false");
     menuToggle.setAttribute("aria-expanded", "true");
     document.body.style.overflow = "hidden";
-    sidebarClose?.focus();
+    const firstNavLink = sidebar.querySelector(".sidebar-nav .nav-link");
+    if (firstNavLink) {
+      firstNavLink.focus();
+    } else {
+      sidebarClose?.focus();
+    }
   }
 
   function closeSidebar() {
@@ -558,11 +563,34 @@ function loadPreferences() {
   applyLanguage(language);
 }
 
+function moveFocusToMainContent() {
+  const mainContent = document.getElementById("main-content");
+  if (!mainContent) return;
+  if (typeof mainContent.focus === "function") {
+    try {
+      mainContent.focus({ preventScroll: true });
+    } catch (error) {
+      mainContent.focus();
+    }
+  }
+}
+
+function initFocusManagement() {
+  const isPageNavigation = document.referrer && document.referrer !== window.location.href;
+  const hasNavigationEntry = performance.getEntriesByType && performance.getEntriesByType("navigation").length > 0;
+  const navigationType = hasNavigationEntry ? performance.getEntriesByType("navigation")[0].type : null;
+
+  if (navigationType === "navigate" || isPageNavigation) {
+    moveFocusToMainContent();
+  }
+}
+
 function init() {
   initSidebar();
   initSettingsDropdown();
   initSettings();
   loadPreferences();
+  initFocusManagement();
 }
 
 if (document.readyState === "loading") {
