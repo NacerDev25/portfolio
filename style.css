@@ -490,6 +490,14 @@ html[dir="rtl"] .sidebar-panel {
   min-height: 40vh;
 }
 
+/* نبذة "عني": فقرة تعريفية */
+.about-text {
+  max-width: 62ch;
+  color: var(--text-secondary);
+  font-size: 1.05rem;
+  line-height: 1.8;
+}
+
 /* الفوتر */
 .site-footer {
   border-top: 1px solid var(--border);
