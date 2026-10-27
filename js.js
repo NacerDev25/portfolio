@@ -39,6 +39,7 @@ const translations = {
     closeSettings: "Close settings",
     aboutTitle: "About Me",
     aboutSubtitle: "Web Developer | Portfolio",
+    aboutPhotoAlt: "Photo of the site owner wearing glasses and a black shirt",
     aboutIntro: "I am Nacer, a website developer and programmer from Algeria. I have comprehensive technical expertise in engineering and building digital applications and platforms from scratch, combining my background in clinical psychology to deliver exceptional user experiences. I design high-performance interfaces adapted for all users, with full commitment to modern development standards and accessibility standards.",
     homeHeroHeading: "Web developer building fast, accessible websites",
     homeHeroLead: "I turn ideas into clean, responsive interfaces that work well for everyone — with a focus on performance, accessibility, and maintainable code.",
@@ -115,7 +116,7 @@ const translations = {
     contactEmailDesc: "Best for project details and longer messages.",
     contactPhoneLabel: "Phone",
     contactPhoneDesc: "Available during working hours.",
-    contactWhatsappLabel: "WhatsApp",
+    contactWhatsappLabel: "WhatsApp Business",
     contactWhatsappDesc: "Quick questions and short updates.",
     contactAvailabilityHeading: "Availability",
     contactAvailabilityText: "Currently available for freelance projects and collaborations.",
@@ -151,6 +152,7 @@ const translations = {
     closeSettings: "إغلاق الإعدادات",
     aboutTitle: "عني",
     aboutSubtitle: "مطور ويب | معرض الأعمال",
+    aboutPhotoAlt: "صورة لصاحب الموقع يرتدي نظارات وقميص أسود",
     aboutIntro: "أنا ناصر، مطور ومبرمج مواقع من الجزائر. أمتلك خبرة تقنية متكاملة في هندسة وبناء التطبيقات والمنصات الرقمية من الصفر، مع دمج خلفيتي في علم النفس العيادي لتقديم تجارب مستخدم استثنائية. أصمم واجهات عالية الأداء مهيأة لجميع المستخدمين، مع التزام تام بالمعايير البرمجية الحديثة ومعايير إمكانية الوصول.",
     homeHeroHeading: "مطوّر ويب أبني مواقع سريعة وسهلة الوصول",
     homeHeroLead: "أحوّل الأفكار إلى واجهات نظيفة ومتجاوبة تعمل بشكل جيد للجميع، مع التركيز على الأداء وإمكانية الوصول والكود القابل للصيانة.",
@@ -227,7 +229,7 @@ const translations = {
     contactEmailDesc: "الأفضل لتفاصيل المشروع والرسائل الطويلة.",
     contactPhoneLabel: "الهاتف",
     contactPhoneDesc: "متاح خلال ساعات العمل.",
-    contactWhatsappLabel: "واتساب",
+    contactWhatsappLabel: "واتساب بزنس",
     contactWhatsappDesc: "للأسئلة السريعة والتحديثات القصيرة.",
     contactAvailabilityHeading: "التوفر",
     contactAvailabilityText: "متاح حالياً للمشاريع المستقلة والتعاون.",
@@ -263,6 +265,7 @@ const translations = {
     closeSettings: "Fermer les paramètres",
     aboutTitle: "À propos de moi",
     aboutSubtitle: "Développeur Web | Portfolio",
+    aboutPhotoAlt: "Photo du propriétaire du site portant des lunettes et une chemise noire",
     aboutIntro: "Je suis Nacer, développeur et programmeur de sites web originaire d’Algérie. Je possède une expertise technique complète dans l’ingénierie et la création d’applications et de plateformes numériques à partir de zéro, en intégrant ma formation en psychologie clinique pour offrir des expériences utilisateur exceptionnelles. Je conçois des interfaces performantes adaptées à tous les utilisateurs, avec un engagement total envers les normes de développement modernes et les normes d’accessibilité.",
     homeHeroHeading: "Développeur web de sites rapides et accessibles",
     homeHeroLead: "Je transforme les idées en interfaces claires et responsives qui fonctionnent pour tous, avec un accent sur la performance, l’accessibilité et un code maintenable.",
@@ -339,7 +342,7 @@ const translations = {
     contactEmailDesc: "Idéal pour les détails du projet et les messages longs.",
     contactPhoneLabel: "Téléphone",
     contactPhoneDesc: "Disponible pendant les heures de travail.",
-    contactWhatsappLabel: "WhatsApp",
+    contactWhatsappLabel: "WhatsApp Business",
     contactWhatsappDesc: "Pour les questions rapides et les courts messages.",
     contactAvailabilityHeading: "Disponibilité",
     contactAvailabilityText: "Actuellement disponible pour des projets freelance et des collaborations.",
@@ -356,7 +359,8 @@ const translations = {
 const I18N_TARGETS = {
   "data-i18n": { kind: "text" },
   "data-i18n-aria-label": { kind: "attribute", name: "aria-label" },
-  "data-i18n-title": { kind: "attribute", name: "title" }
+  "data-i18n-title": { kind: "attribute", name: "title" },
+  "data-i18n-alt": { kind: "attribute", name: "alt" }
 };
 
 function applyTranslations(translation) {

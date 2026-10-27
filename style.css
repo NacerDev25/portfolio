@@ -490,8 +490,28 @@ html[dir="rtl"] .sidebar-panel {
   min-height: 40vh;
 }
 
-/* نبذة "عني": فقرة تعريفية */
+/* نبذة "عني": صورة دائرية + فقرة تعريفية */
+.about-layout {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 2rem;
+}
+
+.about-photo {
+  width: clamp(10rem, 28vw, 14rem);
+  height: clamp(10rem, 28vw, 14rem);
+  border-radius: 50%;
+  object-fit: cover;
+  object-position: center top;
+  border: 1px solid var(--border);
+  background-color: var(--surface);
+  flex: 0 0 auto;
+}
+
 .about-text {
+  flex: 1 1 20rem;
+  min-width: 0;
   max-width: 62ch;
   color: var(--text-secondary);
   font-size: 1.05rem;
