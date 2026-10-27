@@ -612,12 +612,26 @@ function initFocusManagement() {
   }
 }
 
+function initContactEmail() {
+  const link = document.getElementById("contact-email");
+  if (!link) return;
+  const user = link.dataset.user;
+  const domain = link.dataset.domain;
+  const tld = link.dataset.tld;
+  if (!user || !domain || !tld) return;
+  const email = user + "@" + domain + "." + tld;
+  link.href = "mailto:" + email;
+  const text = link.querySelector(".email-text");
+  if (text) text.textContent = email;
+}
+
 function init() {
   initSidebar();
   initSettingsDropdown();
   initSettings();
   loadPreferences();
   initFocusManagement();
+  initContactEmail();
 }
 
 if (document.readyState === "loading") {
