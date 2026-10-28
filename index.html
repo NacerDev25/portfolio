@@ -24,7 +24,15 @@
           <span class="menu-toggle-bar"></span>
           <span class="menu-toggle-bar"></span>
         </button>
-        <a class="site-logo" href="index.html" data-i18n-aria-label="logoLabel">Logo</a>
+        <a class="site-logo" href="index.html" data-i18n-aria-label="logoLabel" aria-label="Nacer Dev Services">
+          <svg class="site-logo-svg" width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <rect width="40" height="40" rx="10" fill="var(--accent)"/>
+            <path d="M12 28V12H16.2L23.8 23.2V12H28V28H23.8L16.2 16.8V28H12Z" fill="var(--accent-contrast)"/>
+            <path d="M9 16L11 14M9 24L11 26M29 16L31 14M29 24L31 26" stroke="var(--accent-contrast)" stroke-width="1.5" stroke-linecap="round" opacity="0.8"/>
+            <path d="M14 19H15M25 19H26" stroke="var(--accent-contrast)" stroke-width="1.5" stroke-linecap="round"/>
+          </svg>
+          <span class="site-logo-text">Nacer Dev Services</span>
+        </a>
       </div>
       <nav class="nav-desktop" aria-label="Main navigation">
         <ul class="nav-desktop-list">
@@ -67,6 +75,15 @@
                 <button class="theme-option is-active" type="button" data-theme="light" aria-pressed="true" data-i18n="light">Light Mode</button>
                 <button class="theme-option" type="button" data-theme="dark" aria-pressed="false" data-i18n="dark">Dark Mode</button>
               </div>
+            </div>
+            <div class="settings-panel-section">
+              <label class="settings-panel-label" for="font-size-select-header" data-i18n="fontSize">Font size</label>
+              <select class="language-select font-size-select" id="font-size-select-header" data-i18n-aria-label="fontSize">
+                <option value="0.9" data-i18n="fontSizeSmall">Small</option>
+                <option value="1" selected data-i18n="fontSizeNormal">Normal</option>
+                <option value="1.1" data-i18n="fontSizeLarge">Large</option>
+                <option value="1.2" data-i18n="fontSizeExtraLarge">Extra large</option>
+              </select>
             </div>
             <div class="settings-panel-section">
               <label class="settings-panel-label" for="language-select-header" data-i18n="language">Language</label>
@@ -119,6 +136,15 @@
             <button class="theme-option is-active" type="button" data-theme="light" aria-pressed="true" data-i18n="light">Light Mode</button>
             <button class="theme-option" type="button" data-theme="dark" aria-pressed="false" data-i18n="dark">Dark Mode</button>
           </div>
+        </div>
+        <div class="settings-group">
+          <label class="settings-label" for="font-size-select" data-i18n="fontSize">Font size</label>
+          <select class="language-select font-size-select" id="font-size-select" data-i18n-aria-label="fontSize">
+            <option value="0.9" data-i18n="fontSizeSmall">Small</option>
+            <option value="1" selected data-i18n="fontSizeNormal">Normal</option>
+            <option value="1.1" data-i18n="fontSizeLarge">Large</option>
+            <option value="1.2" data-i18n="fontSizeExtraLarge">Extra large</option>
+          </select>
         </div>
         <div class="settings-group">
           <label class="settings-label" for="language-select" data-i18n="language">Language</label>

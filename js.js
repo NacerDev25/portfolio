@@ -5,7 +5,8 @@
 
 const STORAGE_KEYS = {
   theme: "portfolio_theme",
-  language: "portfolio_language"
+  language: "portfolio_language",
+  fontSize: "portfolio_font_size"
 };
 
 const translations = {
@@ -34,6 +35,11 @@ const translations = {
     dark: "Dark Mode",
     language: "Language",
     languageSelect: "Select language",
+    fontSize: "Font size",
+    fontSizeSmall: "Small",
+    fontSizeNormal: "Normal",
+    fontSizeLarge: "Large",
+    fontSizeExtraLarge: "Extra large",
     closeMenu: "Close Menu",
     openMenu: "Open Sidebar",
     closeSettings: "Close settings",
@@ -147,6 +153,11 @@ const translations = {
     dark: "الوضع الداكن",
     language: "اللغة",
     languageSelect: "اختيار اللغة",
+    fontSize: "حجم الخط",
+    fontSizeSmall: "صغير",
+    fontSizeNormal: "عادي",
+    fontSizeLarge: "كبير",
+    fontSizeExtraLarge: "أكبر",
     closeMenu: "إغلاق القائمة",
     openMenu: "فتح القائمة الجانبية",
     closeSettings: "إغلاق الإعدادات",
@@ -260,6 +271,11 @@ const translations = {
     dark: "Mode Sombre",
     language: "Langue",
     languageSelect: "Choisir la langue",
+    fontSize: "Taille du texte",
+    fontSizeSmall: "Petit",
+    fontSizeNormal: "Normal",
+    fontSizeLarge: "Grand",
+    fontSizeExtraLarge: "Très grand",
     closeMenu: "Fermer le menu",
     openMenu: "Ouvrir le menu latéral",
     closeSettings: "Fermer les paramètres",
@@ -393,6 +409,22 @@ function applyTheme(theme) {
 
   try {
     localStorage.setItem(STORAGE_KEYS.theme, theme);
+  } catch (error) {
+    // تجاهل أخطاء localStorage
+  }
+}
+
+function applyFontSize(scale) {
+  const allowed = ["0.9", "1", "1.1", "1.2"];
+  const fontScale = allowed.includes(scale) ? scale : "1";
+  document.documentElement.style.setProperty("--font-scale", fontScale);
+
+  document.querySelectorAll(".font-size-select").forEach((select) => {
+    select.value = fontScale;
+  });
+
+  try {
+    localStorage.setItem(STORAGE_KEYS.fontSize, fontScale);
   } catch (error) {
     // تجاهل أخطاء localStorage
   }
@@ -566,11 +598,18 @@ function initSettings() {
     applyLanguage(event.target.value);
     if (languageSelect) languageSelect.value = event.target.value;
   });
+
+  document.querySelectorAll(".font-size-select").forEach((select) => {
+    select.addEventListener("change", (event) => {
+      applyFontSize(event.target.value);
+    });
+  });
 }
 
 function loadPreferences() {
   let theme = "light";
   let language = "en";
+  let fontSize = "1";
 
   try {
     const savedTheme = localStorage.getItem(STORAGE_KEYS.theme);
@@ -590,8 +629,18 @@ function loadPreferences() {
     // تجاهل
   }
 
+  try {
+    const savedFontSize = localStorage.getItem(STORAGE_KEYS.fontSize);
+    if (savedFontSize === "0.9" || savedFontSize === "1" || savedFontSize === "1.1" || savedFontSize === "1.2") {
+      fontSize = savedFontSize;
+    }
+  } catch (error) {
+    // تجاهل
+  }
+
   applyTheme(theme);
   applyLanguage(language);
+  applyFontSize(fontSize);
 }
 
 function moveFocusToMainContent() {

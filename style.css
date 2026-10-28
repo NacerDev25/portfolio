@@ -11,6 +11,7 @@
 }
 
 :root {
+  --font-scale: 1;
   --bg: #f8f9fa;
   --surface: #ffffff;
   --text-primary: #1f2937;
@@ -36,8 +37,12 @@
   --footer-bg: #101225;
 }
 
+:root {
+  --font-scale: 1;
+}
+
 html {
-  font-size: 16px;
+  font-size: calc(16px * var(--font-scale));
 }
 
 body {
@@ -127,10 +132,23 @@ html[dir="rtl"] body {
 }
 
 .site-logo {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
   font-weight: 700;
-  font-size: 1.1rem;
+  font-size: 1rem;
   color: var(--text-primary);
   text-decoration: none;
+}
+
+.site-logo-svg {
+  width: 2.25rem;
+  height: 2.25rem;
+  flex-shrink: 0;
+}
+
+.site-logo-text {
+  white-space: nowrap;
 }
 
 /* التنقل الأفقي للديسكتوب */
